@@ -4,13 +4,13 @@
  * and open the template in the editor.
  */
 
-package motor;
+package engine;
 import java.util.Random;
 /**
  *
  * @author henrisilver
  */
-public class Motor {
+public class Engine {
 
     /**
      * @param args the command line arguments
