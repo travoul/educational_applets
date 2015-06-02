@@ -15,16 +15,39 @@ public class Process {
     private int currentLine;
     private int startOfCR;
     private int endOfCR;
-    private boolean running;
+    private int startOfLoop;
     private boolean inCritical;
+    private int loop;
     
-    public Process(int num, int start, int end) {
+    public Process(int num, int start, int end, int sloop) {
         numberOfLines = num;
         currentLine = 0;
         startOfCR = start;
         endOfCR = end;
-        running = false;
+        startOfLoop = sloop;
         inCritical = false;
+        loop = 0;
+    }
+    
+    public void nextLine(Process other) {
+        if((currentLine+1) != startOfCR || !other.isInCritical()) {
+            currentLine++;
+            if(currentLine > numberOfLines) {
+                System.out.println("\n\nLOOPOU\n");
+                loop++;
+                currentLine = startOfLoop;
+            }
+            checkCriticalRegion();
+        }
+        else
+            System.out.println("\n\nTEM GENTE NA REGIAO :)\n");
+    }
+    
+    public void checkCriticalRegion() {
+        if(currentLine == startOfCR)
+            this.inCritical = true;
+        else if (currentLine == 1 + endOfCR)
+            this.inCritical = false;
     }
 
     public int getNumberOfLines() {
@@ -42,9 +65,13 @@ public class Process {
     public int getEndOfCR() {
         return endOfCR;
     }
-
-    public boolean isRunning() {
-        return running;
+    
+    public int getLoop() {
+        return loop;
+    }
+    
+    public int getStartOfLoop() {
+        return startOfLoop;
     }
 
     public boolean isInCritical() {
@@ -67,12 +94,16 @@ public class Process {
         this.endOfCR = endOfCR;
     }
 
-    public void setRunning(boolean running) {
-        this.running = running;
-    }
-
     public void setInCritical(boolean inCritical) {
         this.inCritical = inCritical;
     }
     
+    public void setLoop(int loop) {
+        this.loop = loop;
+    }
+    
+    public void setStartOfLoop(int startOfLoop) {
+        this.startOfLoop = startOfLoop;
+    }
+
 }
