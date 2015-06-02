@@ -1,0 +1,10 @@
+void thread1(void *notUsed){
+  type variables;
+	while(TRUE){
+		doWhateverNonCritical();
+		enterCriticalRegion();
+		doWhateverCritical();
+		leaveCriticalRegion();
+		doWhateverNonCritical();
+	}
+}
