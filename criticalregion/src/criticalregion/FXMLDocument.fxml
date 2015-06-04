@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="criticalregion.FXMLDocumentController">
+    <children>
+      <BorderPane prefHeight="600.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <bottom>
+              <Button fx:id="button" onMouseClicked="#mouseClickedExitButton" onMouseEntered="#mouseEnteredExitButton" onMouseExited="#mouseExitedButton" prefHeight="25.0" prefWidth="135.0" text="Sair" textAlignment="JUSTIFY" BorderPane.alignment="CENTER" />
+         </bottom>
+         <center>
+              <Label fx:id="label" minHeight="16" minWidth="69" prefHeight="59.0" prefWidth="140.0" BorderPane.alignment="CENTER" />
+         </center>
+         <left>
+            <Button fx:id="button1" onMouseClicked="#mouseClickedSlideButton" onMouseEntered="#mouseEnteredSlideButton" onMouseExited="#mouseExitedButton" prefHeight="25.0" prefWidth="135.0" text="Outro" textAlignment="JUSTIFY" BorderPane.alignment="CENTER" />
+         </left>
+      </BorderPane>
+    </children>
+</AnchorPane>
