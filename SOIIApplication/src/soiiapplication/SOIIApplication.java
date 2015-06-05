@@ -5,6 +5,8 @@
  */
 package soiiapplication;
 
+import java.util.Locale;
+import java.util.ResourceBundle;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -12,6 +14,8 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 public class SOIIApplication extends Application {
+    
+    public static ResourceBundle BUNDLE;
     private Stage primaryStage;
     
     @Override

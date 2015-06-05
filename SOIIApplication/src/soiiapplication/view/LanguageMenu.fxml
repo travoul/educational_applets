@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.image.*?>
 <?import java.lang.*?>
@@ -8,25 +9,31 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" stylesheets="@LanguageMenu.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="soiiapplication.view.LanguageMenuController">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" stylesheets="@LanguageMenu.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="soiiapplication.view.LanguageMenuController">
    <children>
       <HBox layoutY="220.0" spacing="20.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <children>
             <Region layoutX="-11.0" layoutY="220.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" HBox.hgrow="ALWAYS" />
             <Group AnchorPane.bottomAnchor="185.0">
                <children>
-                  <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="481.0" layoutY="225.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="usaFlag" fitHeight="150.0" fitWidth="200.0" layoutX="481.0" layoutY="225.0" onMouseClicked="#mouseClickedUSA" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@pictures/flags/us.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="198.0" layoutY="225.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="braFlag" fitHeight="150.0" fitWidth="200.0" layoutX="198.0" layoutY="225.0" onMouseClicked="#mouseClickedBra" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@pictures/flags/br.png" />
                      </image>
                   </ImageView>
-                  <Label fx:id="languagePort" layoutX="246.0" layoutY="398.0" text="Português" />
-                  <Label fx:id="languageEng" layoutX="537.0" layoutY="398.0" text="English" />
+                  <Label fx:id="languagePort" layoutX="208.0" layoutY="375.0" text="Português" textFill="WHITE">
+                     <font>
+                        <Font name="Monaco" size="24.0" />
+                     </font></Label>
+                  <Label fx:id="languageEng" layoutX="506.0" layoutY="377.0" text="English" textFill="WHITE">
+                     <font>
+                        <Font name="Monaco" size="24.0" />
+                     </font></Label>
                </children>
             </Group>
             <Region layoutX="659.0" layoutY="220.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.rightAnchor="0.0" HBox.hgrow="ALWAYS">
