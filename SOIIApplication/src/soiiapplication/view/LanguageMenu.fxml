@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" stylesheets="@LanguageMenu.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="soiiapplication.view.LanguageMenuController">
+   <children>
+      <HBox layoutY="220.0" spacing="20.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <Region layoutX="-11.0" layoutY="220.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" HBox.hgrow="ALWAYS" />
+            <Group AnchorPane.bottomAnchor="185.0">
+               <children>
+                  <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="481.0" layoutY="225.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@pictures/flags/us.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="198.0" layoutY="225.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@pictures/flags/br.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="languagePort" layoutX="246.0" layoutY="398.0" text="Português" />
+                  <Label fx:id="languageEng" layoutX="537.0" layoutY="398.0" text="English" />
+               </children>
+            </Group>
+            <Region layoutX="659.0" layoutY="220.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.rightAnchor="0.0" HBox.hgrow="ALWAYS">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Region>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
