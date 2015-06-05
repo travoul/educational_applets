@@ -8,11 +8,16 @@ package criticalregion;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.application.Platform;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.BorderPane;
+import javafx.stage.Stage;
 
 /**
  *
@@ -22,6 +27,12 @@ public class FXMLDocumentController implements Initializable {
     
     @FXML
     private Label label;
+    private static boolean show;
+
+    public void setShow(boolean show) {
+        FXMLDocumentController.show = show;
+    }
+    
     
     @FXML
     private void mouseClickedExitButton(MouseEvent event) {
@@ -35,6 +46,7 @@ public class FXMLDocumentController implements Initializable {
     
     @FXML
     private void mouseEnteredSlideButton(MouseEvent event){
+        
         label.setText("Click to enter slides presentation");
     }
     
@@ -44,11 +56,23 @@ public class FXMLDocumentController implements Initializable {
     }
     
     @FXML
-    private void mouseClickedSlideButton(MouseEvent event){
+    private void mouseClickedSlideButton(MouseEvent event) throws Exception{
+        show = true;
         label.setText("Entering slides...");
+        Stage currentStage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("FXMLCredits.fxml"));
+        Parent root = (Parent) loader.load();
+        Scene scene = new Scene(root);
+        
+        //((FXMLCreditsController) loader.getController()).setPreviousLoader());
+        
+        currentStage.setScene(scene);
+        
     }
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        if(show)
+            label.setText("Click to enter slides presentation");
     }        
 }

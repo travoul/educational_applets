@@ -16,12 +16,16 @@ import javafx.stage.Stage;
  */
 public class Criticalregion extends Application {
     
+    public Stage theStage;
+    
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
+        theStage = stage;
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("FXMLDocument.fxml"));
+        Parent root = loader.load();
         
         Scene scene = new Scene(root);
-        
+        //((FXMLDocumentController) loader.getController()).setShow(true);
         stage.setScene(scene);
         stage.show();
     }
