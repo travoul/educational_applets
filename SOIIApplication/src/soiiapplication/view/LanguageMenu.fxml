@@ -26,11 +26,11 @@
                         <Image url="@pictures/flags/br.png" />
                      </image>
                   </ImageView>
-                  <Label fx:id="languagePort" layoutX="208.0" layoutY="375.0" text="Português" textFill="WHITE">
+                  <Label fx:id="languagePort" layoutX="222.0" layoutY="379.0" text="Português" textFill="WHITE">
                      <font>
                         <Font name="Monaco" size="24.0" />
                      </font></Label>
-                  <Label fx:id="languageEng" layoutX="506.0" layoutY="377.0" text="English" textFill="WHITE">
+                  <Label fx:id="languageEng" layoutX="518.0" layoutY="379.0" text="English" textFill="WHITE">
                      <font>
                         <Font name="Monaco" size="24.0" />
                      </font></Label>
@@ -43,5 +43,15 @@
             </Region>
          </children>
       </HBox>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="343.0" layoutY="20.0" prefHeight="17.0" prefWidth="344.0" text="Menu de Linguagem" textFill="#575656" AnchorPane.topAnchor="20.0">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="343.0" layoutY="60.0" prefHeight="17.0" prefWidth="344.0" text="Language Menu" textFill="#575656">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

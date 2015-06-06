@@ -13,5 +13,5 @@ and open the template in the editor.
 }
 
 #BorderPaneMainMenu{
-	-fx-background-image: url("pictures/background.png");	
+    -fx-background-image: url("pictures/background.png");	
 }

@@ -24,10 +24,10 @@ import javafx.stage.Stage;
  * @author Marcello
  */
 public class MainMenuController implements Initializable {
-    
+
     @FXML
     private Label informativeLabel;
-    
+
     @FXML
     private Button language;
 
@@ -39,21 +39,55 @@ public class MainMenuController implements Initializable {
         Parent root = (Parent) loader.load();
         Scene scene = new Scene(root);
         currentStage.setScene(scene);
-        
-    } 
-    
-    @FXML
-    private void mouseEntered(MouseEvent event) throws Exception {
-        informativeLabel.setText(soiiapplication.SOIIApplication.BUNDLE.getString("message"));
-       
-    } 
+    }
 
-    
-    
-    /**
-     * Initializes the controller class.
-     */
+    @FXML
+    private void firstButtonMouseClicked (MouseEvent event) throws Exception {
+        Scene currentScene = ((Node) event.getSource()).getScene();
+        Stage currentStage = (Stage) currentScene.getWindow();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Didyouknow.fxml"),soiiapplication.SOIIApplication.BUNDLE);
+        Parent root = (Parent) loader.load();
+        Scene scene = new Scene(root);
+        currentStage.setScene(scene);
+    }
+
+    @FXML
+    private void thirdButtonMouseClicked (MouseEvent event) throws Exception {
+        Scene currentScene = ((Node) event.getSource()).getScene();
+        Stage currentStage = (Stage) currentScene.getWindow();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Credits.fxml"),soiiapplication.SOIIApplication.BUNDLE);
+        Parent root = (Parent) loader.load();
+        Scene scene = new Scene(root);
+        currentStage.setScene(scene);
+    }
+
+    @FXML
+    private void firstButtonMouseEntered(MouseEvent event) throws Exception {
+        informativeLabel.setText(soiiapplication.SOIIApplication.BUNDLE.getString("readableInst"));
+    }
+
+    @FXML
+    private void secondButtonMouseEntered (MouseEvent e) throws Exception {
+        informativeLabel.setText(soiiapplication.SOIIApplication.BUNDLE.getString("simulationInst"));
+    }
+
+    @FXML
+    private void thirdButtonMouseEntered (MouseEvent e) throws Exception {
+        informativeLabel.setText(soiiapplication.SOIIApplication.BUNDLE.getString("creditsInst"));
+    }
+
+    @FXML
+    private void fourthButtonMouseEntered (MouseEvent e) throws Exception {
+        informativeLabel.setText(soiiapplication.SOIIApplication.BUNDLE.getString("changeLanguageInst"));
+    }
+
+    @FXML
+    private void allButtonsMouseExited (MouseEvent e) throws Exception {
+        informativeLabel.setText(soiiapplication.SOIIApplication.BUNDLE.getString("selectAnOption"));
+    }
+
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
-    }     
+    public void initialize(URL url, ResourceBundle rb){
+        informativeLabel.setText(soiiapplication.SOIIApplication.BUNDLE.getString("selectAnOption"));
+    }
 }

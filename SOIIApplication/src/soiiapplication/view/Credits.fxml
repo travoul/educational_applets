@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="1000.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="soiiapplication.view.CreditsController">
+    <stylesheets>
+        <URL value="@credits.css" />
+    </stylesheets>
+   <children>
+      <HBox alignment="TOP_CENTER" layoutX="403.0" layoutY="41.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="100.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Region prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+            <Label text="%creditsMenuName" textFill="#575656">
+               <font>
+                  <Font size="22.0" />
+               </font>
+               <HBox.margin>
+                  <Insets top="30.0" />
+               </HBox.margin>
+            </Label>
+            <Region prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+         </children>
+      </HBox>
+      <HBox layoutX="410.0" layoutY="493.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <Region prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#backButtonClicked" text="%didYouKnowBackButton" textAlignment="CENTER">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Button>
+            <Region layoutX="110.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+         </children>
+      </HBox>
+      <TextArea editable="false" layoutX="55.0" layoutY="237.0" maxHeight="-Infinity" minHeight="-Infinity" text="Autores:&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;Github Profile&#10;Marcello de Paula Ferreira Costa&#9;&#9;&#9;&#9;&#9;@travoul&#10;Henrique de Almeira Machado da Silveira&#9;&#9;&#9;@henrisilver&#10;Guilherme Nishina Fortes&#9;&#9;&#9;&#9;&#9;&#9;@definir&#10;Sérgio Yudi Takeda&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;@definir&#10;&#10;&#10;Segundo trabalho especificado na displina de Sistemas Operacionais SSC-0640&#10;Disciplina oferecida pela Universidade de São Paulo - Campus de São Carlos&#10;Professor responsável: Paulo Sérgio Lopes Souza Algo Assim Definir" AnchorPane.bottomAnchor="120.0" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="180.0" />
+   </children>
+</AnchorPane>

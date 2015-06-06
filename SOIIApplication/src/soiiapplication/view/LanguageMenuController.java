@@ -28,7 +28,6 @@ public class LanguageMenuController implements Initializable {
     ResourceBundle bundlePT = ResourceBundle.getBundle("soiiapplication.bundle", Locale.forLanguageTag("pt"));
     ResourceBundle bundleEN = ResourceBundle.getBundle("soiiapplication.bundle", Locale.forLanguageTag("en"));
 
-   
     @FXML
     private ImageView usaFlag;
 
@@ -65,7 +64,7 @@ public class LanguageMenuController implements Initializable {
     }
 
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
+    public void initialize(URL url, ResourceBundle rb){
         languagePort.setText("Português");
         languageEng.setText("English");
     }
