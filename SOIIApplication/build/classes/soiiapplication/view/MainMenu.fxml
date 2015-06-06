@@ -11,11 +11,11 @@
 
 <AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" stylesheets="@Background.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="soiiapplication.view.MainMenuController">
    <children>
-      <Button layoutX="49.0" layoutY="30.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="152.0" text="Button" />
+      <Button layoutX="49.0" layoutY="30.0" mnemonicParsing="false" onMouseEntered="#mouseEntered" prefHeight="60.0" prefWidth="152.0" text="Button" />
       <Button layoutX="49.0" layoutY="126.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="152.0" text="Button" />
       <Button layoutX="49.0" layoutY="223.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="152.0" text="Button" />
       <Button fx:id="language" layoutX="49.0" layoutY="329.0" mnemonicParsing="false" onMouseClicked="#mouseClickedLanguage" prefHeight="60.0" prefWidth="152.0" text="%change_language" />
-      <Label layoutX="262.0" layoutY="34.0" prefHeight="52.0" prefWidth="527.0" text="%title" textAlignment="CENTER" textOverrun="CLIP" wrapText="true">
+      <Label layoutX="262.0" layoutY="34.0" prefHeight="52.0" prefWidth="722.0" text="%title" textAlignment="CENTER">
          <font>
             <Font name="Monaco" size="26.0" />
          </font>
@@ -25,5 +25,6 @@
             <Font name="Monaco" size="22.0" />
          </font>
       </Label>
+      <Label fx:id="informativeLabel" layoutX="358.0" layoutY="275.0" />
    </children>
 </AnchorPane>

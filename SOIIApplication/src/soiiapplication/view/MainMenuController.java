@@ -41,6 +41,12 @@ public class MainMenuController implements Initializable {
         currentStage.setScene(scene);
         
     } 
+    
+    @FXML
+    private void mouseEntered(MouseEvent event) throws Exception {
+        informativeLabel.setText(soiiapplication.SOIIApplication.BUNDLE.getString("message"));
+       
+    } 
 
     
     
