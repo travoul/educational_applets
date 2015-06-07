@@ -1,0 +1,16 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainFxmlClass {
+        -fx-background-image: url("pictures/background.png");
+}
+
+#currentProcess {
+        -fx-background-color:white;
+}
+
+#criticalRegion {
+        -fx-background-color:white;
+}
+

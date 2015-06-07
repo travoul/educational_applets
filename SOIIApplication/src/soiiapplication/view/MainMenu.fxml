@@ -17,7 +17,7 @@
             <VBox prefHeight="200.0" prefWidth="100.0" spacing="20.0" BorderPane.alignment="CENTER">
                <children>
                   <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#firstButtonMouseClicked" onMouseEntered="#firstButtonMouseEntered" onMouseExited="#allButtonsMouseExited" prefHeight="30.0" prefWidth="120.0" text="%readableContent" VBox.vgrow="NEVER" />
-                  <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseEntered="#secondButtonMouseEntered" onMouseExited="#allButtonsMouseExited" prefHeight="30.0" prefWidth="120.0" text="%simulation" VBox.vgrow="NEVER" />
+                  <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#secondButtonMouseClicked" onMouseEntered="#secondButtonMouseEntered" onMouseExited="#allButtonsMouseExited" prefHeight="30.0" prefWidth="120.0" text="%simulation" VBox.vgrow="NEVER" />
                   <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#thirdButtonMouseClicked" onMouseEntered="#thirdButtonMouseEntered" onMouseExited="#allButtonsMouseExited" prefHeight="30.0" prefWidth="120.0" text="%credits" VBox.vgrow="NEVER" />
                   <Button fx:id="language" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#mouseClickedLanguage" onMouseEntered="#fourthButtonMouseEntered" onMouseExited="#allButtonsMouseExited" prefHeight="30.0" prefWidth="120.0" text="%changeLanguage" VBox.vgrow="NEVER" />
                   <Region prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
@@ -42,15 +42,18 @@
                         <Region layoutX="90.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="200.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" HBox.hgrow="ALWAYS" />
                         <Group>
                            <children>
-                              <Label alignment="CENTER" contentDisplay="CENTER" layoutX="325.0" layoutY="37.0" prefHeight="32.0" prefWidth="498.0" text="%menuName" textAlignment="CENTER" textFill="#575656">
+                              <Label alignment="CENTER" contentDisplay="CENTER" layoutX="325.0" layoutY="37.0" prefHeight="32.0" prefWidth="987.0" text="%menuName" textAlignment="CENTER" textFill="#575656">
                                  <font>
                                     <Font name="Monaco" size="22.0" />
                                  </font>
                               </Label>
-                              <Label alignment="CENTER" contentDisplay="CENTER" layoutX="314.0" layoutY="87.0" prefHeight="38.0" prefWidth="532.0" text="%title" textAlignment="CENTER" textFill="#575656">
+                              <Label alignment="CENTER" contentDisplay="CENTER" layoutX="314.0" layoutY="87.0" prefHeight="38.0" prefWidth="1000.0" text="%title" textAlignment="CENTER" textFill="#575656">
                                  <font>
                                     <Font name="Monaco" size="26.0" />
                                  </font>
+                                 <padding>
+                                    <Insets top="20.0" />
+                                 </padding>
                               </Label>
                            </children>
                            <HBox.margin>

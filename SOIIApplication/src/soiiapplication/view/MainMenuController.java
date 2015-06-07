@@ -17,6 +17,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import soiiapplication.model.SimulatOS;
 
 /**
  * FXML Controller class
@@ -46,6 +47,16 @@ public class MainMenuController implements Initializable {
         Scene currentScene = ((Node) event.getSource()).getScene();
         Stage currentStage = (Stage) currentScene.getWindow();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("Didyouknow.fxml"),soiiapplication.SOIIApplication.BUNDLE);
+        Parent root = (Parent) loader.load();
+        Scene scene = new Scene(root);
+        currentStage.setScene(scene);
+    }
+    
+    @FXML
+    private void secondButtonMouseClicked (MouseEvent event) throws Exception {
+        Scene currentScene = ((Node) event.getSource()).getScene();
+        Stage currentStage = (Stage) currentScene.getWindow();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Simulation.fxml"),soiiapplication.SOIIApplication.BUNDLE);
         Parent root = (Parent) loader.load();
         Scene scene = new Scene(root);
         currentStage.setScene(scene);
