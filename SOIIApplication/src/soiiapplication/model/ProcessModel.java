@@ -37,7 +37,7 @@ public class ProcessModel {
         loop = 0;
     }
     
-    public void nextLine(ProcessModel other) {
+    public boolean nextLine(ProcessModel other) {
         if((currentLine+1) != startOfCR || !other.isInCritical()) {
             currentLine++;
             if(currentLine > numberOfLines) {
@@ -46,9 +46,12 @@ public class ProcessModel {
                 currentLine = startOfLoop;
             }
             checkCriticalRegion();
+            return false;
         }
-        else
+        else {
             System.out.println("\n\nTEM GENTE NA REGIAO :)\n");
+            return true;
+        }
     }
     
     public void checkCriticalRegion() {
