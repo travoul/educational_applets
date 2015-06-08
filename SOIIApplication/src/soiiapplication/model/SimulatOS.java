@@ -36,8 +36,8 @@ public class SimulatOS {
         //while(first.getLoop() < maxLoops || second.getLoop() < maxLoops) {
             schedule();
             criticalBlock = current.nextLine(other);
-            System.out.println("Active Process: " + current.hashCode() + " in line: " + current.getCurrentLine());
-            System.out.println("Other Process: " + other.hashCode() + " in line: " + other.getCurrentLine());
+            //System.out.println("Active Process: " + current.hashCode() + " in line: " + current.getCurrentLine());
+            //System.out.println("Other Process: " + other.hashCode() + " in line: " + other.getCurrentLine());
             return new CurrentState(currentProcessID,  first.getCurrentLine(), second.getCurrentLine(), first.isInCritical(), second.isInCritical(), criticalBlock);
     }
 

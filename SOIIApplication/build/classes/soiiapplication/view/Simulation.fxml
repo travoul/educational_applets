@@ -13,7 +13,7 @@
         <URL value="@simulation.css" />
     </stylesheets>
    <children>
-      <Button layoutX="470.0" layoutY="560.0" mnemonicParsing="false" text="%back" />
+      <Button layoutX="470.0" layoutY="560.0" mnemonicParsing="false" onMouseClicked="#backButtonClicked" text="%back" />
       <Button layoutX="510.0" layoutY="518.0" mnemonicParsing="false" onMouseClicked="#nextButtonClicked" prefHeight="26.0" prefWidth="82.0" text="%next" />
       <Button fx:id="previousButton" layoutX="402.0" layoutY="518.0" mnemonicParsing="false" onMouseClicked="#previousButtonClicked" text="%previous" />
       <HBox layoutX="27.0" layoutY="69.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="100.0" AnchorPane.bottomAnchor="200.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="50.0">
@@ -38,11 +38,11 @@
       <HBox layoutX="50.0" layoutY="375.0" prefHeight="100.0" prefWidth="902.0">
          <children>
             <Region prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
-            <Label fx:id="currentProcess" text="Label" />
+            <Label fx:id="currentProcess" prefHeight="16.0" prefWidth="277.0" text="%executing" wrapText="true" />
             <Region prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
-            <Label fx:id="criticalRegion" text="Label" />
+            <Label fx:id="criticalRegion" prefHeight="16.0" prefWidth="326.0" text="%criticalRegion" wrapText="true" />
             <Region prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
-            <Label fx:id="criticalBlock" text="Label" />
+            <Label fx:id="criticalBlock" prefHeight="16.0" prefWidth="268.0" text="%blocking" wrapText="true" />
             <Region prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
          </children>
       </HBox>
