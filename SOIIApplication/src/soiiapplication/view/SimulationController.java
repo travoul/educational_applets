@@ -70,8 +70,17 @@ public class SimulationController implements Initializable {
     private String currentTag1, currentTag2, lastTag1, lastTag2;
     private int simulationMode;
 
-    public void setSimulationMode(int mode) {
+    public void setupSimulationMode(int mode) {
         this.simulationMode = mode;
+
+        addInstructions();
+        process_1_tableView.setItems(instructions_1);
+        process_2_tableView.setItems(instructions_2);
+
+        process_1_tableColumn_instr.setCellValueFactory(cellData -> cellData.getValue().instrProperty());
+        process_2_tableColumn_instr.setCellValueFactory(cellData -> cellData.getValue().instrProperty());
+        process_1_tableColumn_num.setCellValueFactory(cellData -> cellData.getValue().numberProperty());
+        process_2_tableColumn_num.setCellValueFactory(cellData -> cellData.getValue().numberProperty());
     }
 
     @FXML
@@ -106,6 +115,8 @@ public class SimulationController implements Initializable {
 
     /**
      * Initializes the controller class.
+     * @param url
+     * @param rb
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -119,23 +130,14 @@ public class SimulationController implements Initializable {
         previousButton.setDisable(true);
         previousButton.setOpacity(0.5);
         simulator = new SimulatOS(7, 4, 6, 2, 7, 4, 6, 2, 3);
-        generatedStates = new ArrayList<CurrentState>();
-        addInstructions();
+        generatedStates = new ArrayList<>();
+
 
         process_1_tableView.setMouseTransparent(true);
         process_2_tableView.setMouseTransparent(true);
 
         process_1_tableView.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
         process_2_tableView.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
-
-        process_1_tableView.setItems(instructions_1);
-        process_2_tableView.setItems(instructions_2);
-
-        process_1_tableColumn_instr.setCellValueFactory(cellData -> cellData.getValue().instrProperty());
-        process_2_tableColumn_instr.setCellValueFactory(cellData -> cellData.getValue().instrProperty());
-        process_1_tableColumn_num.setCellValueFactory(cellData -> cellData.getValue().numberProperty());
-        process_2_tableColumn_num.setCellValueFactory(cellData -> cellData.getValue().numberProperty());
-
     }
 
     private void addInstructions() {
@@ -153,10 +155,10 @@ public class SimulationController implements Initializable {
     }
 
     private void addInstructionsMutualExclusion(ObservableList<Instruction> instructions) {
-        instructions.add(new Instruction("1", "void thread(){"));
+        instructions.add(new Instruction("1", "void thread() {"));
         instructions.add(new Instruction("2", "\tint local_variable;"));
         instructions.add(new Instruction("3", "\tlock_critical_region();"));
-        instructions.add(new Instruction("4", "\tlocal_variable = read_from_memory(address);"));
+        instructions.add(new Instruction("4", "\tlocal_variable = read_from_memory(0xF4D9012C);"));
         instructions.add(new Instruction("5", "\tlocal_variable++;"));
         instructions.add(new Instruction("6", "\twrite_to_memory(address, local_variable);"));
         instructions.add(new Instruction("7", "\tunlock_critical_region();"));
@@ -165,9 +167,9 @@ public class SimulationController implements Initializable {
     }
 
     private void addInstructionsNoMutualExclusion(ObservableList<Instruction> instructions) {
-        instructions.add(new Instruction("1", "void thread(){"));
+        instructions.add(new Instruction("1", "void thread() {"));
         instructions.add(new Instruction("2", "\tint local_variable;"));
-        instructions.add(new Instruction("3", "\tlocal_variable = read_from_memory(address);"));
+        instructions.add(new Instruction("3", "\tlocal_variable = read_from_memory(0xF4D9012C);"));
         instructions.add(new Instruction("4", "\tlocal_variable++;"));
         instructions.add(new Instruction("5", "\twrite_to_memory(address, local_variable);"));
         instructions.add(new Instruction("6", "}"));
@@ -212,6 +214,7 @@ public class SimulationController implements Initializable {
             currentState = generatedStates.get(listPosition);
             listPosition++;
         }
+        System.out.println("Mode:"+simulationMode);
         System.out.println("NEXT " + currentState.hashCode());
         displayState(currentState);
     }

@@ -43,15 +43,28 @@
             </Region>
          </children>
       </HBox>
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="343.0" layoutY="20.0" prefHeight="17.0" prefWidth="344.0" text="Menu de Linguagem" textFill="#575656" AnchorPane.topAnchor="20.0">
-         <font>
-            <Font size="22.0" />
-         </font>
-      </Label>
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="343.0" layoutY="60.0" prefHeight="17.0" prefWidth="344.0" text="Language Menu" textFill="#575656">
-         <font>
-            <Font size="22.0" />
-         </font>
-      </Label>
+      <HBox maxHeight="-Infinity" minHeight="-Infinity" prefHeight="100.0" prefWidth="1000.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Region prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+            <VBox prefHeight="200.0" prefWidth="100.0" spacing="20.0">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="17.0" prefWidth="344.0" text="Menu de Linguagem" textFill="#575656">
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="17.0" prefWidth="344.0" text="Language Menu" textFill="#575656">
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                  </Label>
+               </children>
+               <HBox.margin>
+                  <Insets top="10.0" />
+               </HBox.margin>
+            </VBox>
+            <Region prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+         </children>
+      </HBox>
    </children>
 </AnchorPane>

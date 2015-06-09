@@ -56,7 +56,7 @@ public class MainMenuController implements Initializable {
     private void secondButtonMouseClicked (MouseEvent event) throws Exception {
         Scene currentScene = ((Node) event.getSource()).getScene();
         Stage currentStage = (Stage) currentScene.getWindow();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("Simulation.fxml"),soiiapplication.SOIIApplication.BUNDLE);
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("ChooseSimulationMenu.fxml"),soiiapplication.SOIIApplication.BUNDLE);
         Parent root = (Parent) loader.load();
         Scene scene = new Scene(root);
         currentStage.setScene(scene);

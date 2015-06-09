@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="1000.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="soiiapplication.view.ChooseSimulationMenuController">
+    <stylesheets>
+        <URL value="@choosesimulationmenu.css" />
+    </stylesheets>
+   <children>
+      <BorderPane prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <center>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="20.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button maxHeight="-Infinity" minHeight="-Infinity" mnemonicParsing="false" onMouseClicked="#mutualClicked" prefHeight="40.0" text="%mutualExclusion" />
+                  <Button maxHeight="-Infinity" minHeight="-Infinity" mnemonicParsing="false" onMouseClicked="#noMutualClicked" prefHeight="40.0" text="%noMutualExclusion" />
+                  <Button maxHeight="-Infinity" minHeight="-Infinity" mnemonicParsing="false" onMouseClicked="#randomClicked" prefHeight="40.0" text="%random" />
+               </children>
+            </VBox>
+         </center>
+         <bottom>
+            <Button mnemonicParsing="false" onMouseClicked="#backButtonClicked" text="%backButtonChooseSimulationMenu" BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets bottom="20.0" />
+               </BorderPane.margin>
+            </Button>
+         </bottom>
+         <top>
+            <HBox maxHeight="-Infinity" minHeight="-Infinity" prefHeight="100.0" prefWidth="200.0" spacing="20.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Region prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Label alignment="CENTER" contentDisplay="CENTER" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="400.0" text="%chooseMenuTitle" textFill="#575656">
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <Region prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+               </children>
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
+            </HBox>
+         </top>
+      </BorderPane>
+   </children>
+</AnchorPane>
