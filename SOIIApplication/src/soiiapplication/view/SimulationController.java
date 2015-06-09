@@ -270,6 +270,7 @@ public class SimulationController implements Initializable {
         if (listPosition == generatedStates.size() && ((simulationMode == 1 && simulator.getCurrentStep() > 16) || (simulationMode == 2 && simulator.getCurrentStep() > 8))) {
             updateTable(process_1_tableColumn_instr, instructions_1, firstLastLine, 0, "NOTHING", lastTag1);
             updateTable(process_2_tableColumn_instr, instructions_2, secondLastLine, 0, "NOTHING", lastTag2);
+            currentProcess.setText(soiiapplication.SOIIApplication.BUNDLE.getString("noprocess"));
         } else {
             if (cs.getCurrentProcessID() == 1) {
                 currentProcess.setText(soiiapplication.SOIIApplication.BUNDLE.getString("currentprocess1"));
@@ -280,7 +281,10 @@ public class SimulationController implements Initializable {
                     currentTag1 = "GREEN";
                     criticalBlock.setText(soiiapplication.SOIIApplication.BUNDLE.getString("noblocking"));
                 }
-                currentTag2 = "YELLOW";
+                if(simulationMode == 2 && cs.getProcess1CurrentLine() >= 2  && cs.getProcess2CurrentLine() >= 4)
+                    currentTag2 = "NOTHING";
+                else
+                    currentTag2 = "YELLOW";
             }
             
             if (cs.getCurrentProcessID() == 2) {
