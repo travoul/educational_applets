@@ -208,7 +208,7 @@ public class SimulationController implements Initializable {
     private void backButtonClicked(MouseEvent event) throws Exception {
         Scene currentScene = ((Node) event.getSource()).getScene();
         Stage currentStage = (Stage) currentScene.getWindow();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("MainMenu.fxml"), soiiapplication.SOIIApplication.BUNDLE);
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("ChooseSimulationMenu.fxml"), soiiapplication.SOIIApplication.BUNDLE);
         Parent root = (Parent) loader.load();
         Scene scene = new Scene(root);
         currentStage.setScene(scene);
