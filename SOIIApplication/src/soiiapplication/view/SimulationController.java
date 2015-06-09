@@ -1,5 +1,5 @@
 // 	BEM VINDOS DE VOLTA
-// 	SENTI SUA FALTA 
+// 	SENTI SUA FALTA
 //     VOCÊS SÃO OS CARAS
 // 	ESTAVA ESPERANDO VOCÊS! :D
 //   #define NOTA 10 // De novo ;)
@@ -60,74 +60,80 @@ import soiiapplication.model.CurrentState;
  * @author henrisilver
  */
 public class SimulationController implements Initializable {
-
+    
     private ObservableList<Instruction> instructions_1 = FXCollections.observableArrayList();
     private ObservableList<Instruction> instructions_2 = FXCollections.observableArrayList();
-
+    
     private SimulatOS simulator;
     private CurrentState currentState;
     private ArrayList<CurrentState> generatedStates;
     private int listPosition, firstLastLine, secondLastLine;
     private String currentTag1, currentTag2, lastTag1, lastTag2;
     private int simulationMode;
-
+    
     public void setupSimulationMode(int mode) {
         this.simulationMode = mode;
-
+        
         addInstructions();
         process_1_tableView.setItems(instructions_1);
         process_2_tableView.setItems(instructions_2);
-
+        
         process_1_tableColumn_instr.setCellValueFactory(cellData -> cellData.getValue().instrProperty());
         process_2_tableColumn_instr.setCellValueFactory(cellData -> cellData.getValue().instrProperty());
         process_1_tableColumn_num.setCellValueFactory(cellData -> cellData.getValue().numberProperty());
         process_2_tableColumn_num.setCellValueFactory(cellData -> cellData.getValue().numberProperty());
         
-        if(simulationMode == 1)
+        if (simulationMode == 1) {
             simulator = new SimulatOS(6, 2, 6, -1, 6, 2, 6, -1, 1);
-        
-        else if(simulationMode == 2)
+        } else if (simulationMode == 2) {
             simulator = new SimulatOS(4, -1, -1, -1, 4, -1, -1, -1, 2);
-        
-        else if(simulationMode == 3)
+        } else if (simulationMode == 3) {
             simulator = new SimulatOS(7, 4, 6, 2, 7, 4, 6, 2, 3);
+        }
     }
-
+    
     @FXML
     private Label currentProcess;
-
+    
     @FXML
     private Label criticalRegion;
-
+    
     @FXML
     private Label criticalBlock;
-
+    
+    @FXML
+    private Label instructionalLabel;
+    
+    @FXML
+    private Button backButton;
+    
     @FXML
     private Button previousButton;
     
     @FXML
     private Button nextButton;
-
+    
     @FXML
     private TableView<Instruction> process_1_tableView;
-
+    
     @FXML
     private TableView<Instruction> process_2_tableView;
-
+    
     @FXML
     private TableColumn<Instruction, String> process_1_tableColumn_instr;
-
+    
     @FXML
     private TableColumn<Instruction, String> process_2_tableColumn_instr;
-
+    
     @FXML
     private TableColumn<Instruction, String> process_1_tableColumn_num;
-
+    
     @FXML
     private TableColumn<Instruction, String> process_2_tableColumn_num;
-
+    
     /**
      * Initializes the controller class.
+     *
      * @param url
      * @param rb
      */
@@ -144,19 +150,18 @@ public class SimulationController implements Initializable {
         previousButton.setOpacity(0.5);
         
         generatedStates = new ArrayList<>();
-
-
+        
         process_1_tableView.setMouseTransparent(true);
         process_2_tableView.setMouseTransparent(true);
-
+        
         process_1_tableView.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
         process_2_tableView.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
         
         nextButton.setText(soiiapplication.SOIIApplication.BUNDLE.getString("Init"));
     }
-
+    
     private void addInstructions() {
-
+        
         if (simulationMode == 1) {
             addInstructionsMutualExclusion(instructions_1);
             addInstructionsMutualExclusion(instructions_2);
@@ -168,7 +173,7 @@ public class SimulationController implements Initializable {
             addInstructionsRandom(instructions_2);
         }
     }
-
+    
     private void addInstructionsMutualExclusion(ObservableList<Instruction> instructions) {
         instructions.add(new Instruction("1", "void thread() {"));
         instructions.add(new Instruction("2", "\tint local_variable;"));
@@ -178,9 +183,9 @@ public class SimulationController implements Initializable {
         instructions.add(new Instruction("6", "\twrite_to_memory(address, local_variable);"));
         instructions.add(new Instruction("7", "\tunlock_critical_region();"));
         instructions.add(new Instruction("8", "}"));
-
+        
     }
-
+    
     private void addInstructionsNoMutualExclusion(ObservableList<Instruction> instructions) {
         instructions.add(new Instruction("1", "void thread() {"));
         instructions.add(new Instruction("2", "\tint local_variable;"));
@@ -188,9 +193,9 @@ public class SimulationController implements Initializable {
         instructions.add(new Instruction("4", "\tlocal_variable++;"));
         instructions.add(new Instruction("5", "\twrite_to_memory(address, local_variable);"));
         instructions.add(new Instruction("6", "}"));
-
+        
     }
-
+    
     private void addInstructionsRandom(ObservableList<Instruction> instructions) {
         instructions.add(new Instruction("1", "void thread(){"));
         instructions.add(new Instruction("2", "\ttype variables;"));
@@ -203,7 +208,7 @@ public class SimulationController implements Initializable {
         instructions.add(new Instruction("9", "\t}"));
         instructions.add(new Instruction("10", "}"));
     }
-
+    
     @FXML
     private void backButtonClicked(MouseEvent event) throws Exception {
         Scene currentScene = ((Node) event.getSource()).getScene();
@@ -213,19 +218,18 @@ public class SimulationController implements Initializable {
         Scene scene = new Scene(root);
         currentStage.setScene(scene);
     }
-
+    
     @FXML
     private void nextButtonClicked(MouseEvent event) throws Exception {
         nextButton.setText(soiiapplication.SOIIApplication.BUNDLE.getString("next"));
-                
+        
         if (listPosition > 0) {
             previousButton.setDisable(false);
             previousButton.setOpacity(1.0);
         }
         if (listPosition == generatedStates.size()) {
             currentState = simulator.simulate();
-            if( (simulationMode == 1 && simulator.getCurrentStep() > 15) || (simulationMode == 2 && simulator.getCurrentStep() > 7) )
-            {
+            if ((simulationMode == 1 && simulator.getCurrentStep() > 16) || (simulationMode == 2 && simulator.getCurrentStep() > 8)) {
                 nextButton.setDisable(true);
                 nextButton.setOpacity(0.5);
             }
@@ -234,22 +238,22 @@ public class SimulationController implements Initializable {
         } else {
             currentState = generatedStates.get(listPosition);
             listPosition++;
-            if( listPosition == generatedStates.size() )//cerificacao para caso de simulacao com passos definidos
+            if (listPosition == generatedStates.size() && ((simulationMode == 1 && simulator.getCurrentStep() > 16) || (simulationMode == 2 && simulator.getCurrentStep() > 8)))//cerificacao para caso de simulacao com passos definidos
             {
                 nextButton.setDisable(true);
                 nextButton.setOpacity(0.5);
             }
         }
-        System.out.println("Mode:"+simulationMode);
-        System.out.println("NEXT " + currentState.hashCode());
+        //System.out.println("Mode:"+simulationMode);
+        //System.out.println("NEXT " + currentState.hashCode());
         displayState(currentState);
     }
-
+    
     @FXML
     private void previousButtonClicked(MouseEvent event) throws Exception {
-
+        
         currentState = generatedStates.get(--listPosition - 1);
-
+        
         if (listPosition == 1) {
             previousButton.setDisable(true);
             previousButton.setOpacity(0.5);
@@ -258,58 +262,65 @@ public class SimulationController implements Initializable {
         nextButton.setDisable(false);
         nextButton.setOpacity(1.0);
         
-        System.out.println("PREVIOUS " + currentState.hashCode());
+        //System.out.println("PREVIOUS " + currentState.hashCode());
         displayState(currentState);
     }
-
+    
     private void displayState(CurrentState cs) {
-
-        if (cs.getCurrentProcessID() == 1) {
-            currentProcess.setText(soiiapplication.SOIIApplication.BUNDLE.getString("currentprocess1"));
-            if (cs.isCriticalBlock()) {
-                currentTag1 = "RED";
-                criticalBlock.setText(soiiapplication.SOIIApplication.BUNDLE.getString("2blocks1"));
-            } else {
-                currentTag1 = "GREEN";
-                criticalBlock.setText(soiiapplication.SOIIApplication.BUNDLE.getString("noblocking"));
-            }
-            currentTag2 = "YELLOW";
-        }
-
-        if (cs.getCurrentProcessID() == 2) {
-            currentProcess.setText(soiiapplication.SOIIApplication.BUNDLE.getString("currentprocess2"));
-            if (cs.isCriticalBlock()) {
-                criticalBlock.setText(soiiapplication.SOIIApplication.BUNDLE.getString("1blocks2"));
-                currentTag2 = "RED";
-            } else {
-                currentTag2 = "GREEN";
-                criticalBlock.setText(soiiapplication.SOIIApplication.BUNDLE.getString("noblocking"));
-            }
-            currentTag1 = "YELLOW";
-        }
-
-        if (cs.getWhoIsInCriticalRegion() == 0) {
-            criticalRegion.setText(soiiapplication.SOIIApplication.BUNDLE.getString("nocritical"));
-        } else if (cs.getWhoIsInCriticalRegion() == 1) {
-            criticalRegion.setText(soiiapplication.SOIIApplication.BUNDLE.getString("critical1"));
+        if (listPosition == generatedStates.size() && ((simulationMode == 1 && simulator.getCurrentStep() > 16) || (simulationMode == 2 && simulator.getCurrentStep() > 8))) {
+            updateTable(process_1_tableColumn_instr, instructions_1, firstLastLine, 0, "NOTHING", lastTag1);
+            updateTable(process_2_tableColumn_instr, instructions_2, secondLastLine, 0, "NOTHING", lastTag2);
         } else {
-            criticalRegion.setText(soiiapplication.SOIIApplication.BUNDLE.getString("critical2"));
+            if (cs.getCurrentProcessID() == 1) {
+                currentProcess.setText(soiiapplication.SOIIApplication.BUNDLE.getString("currentprocess1"));
+                if (cs.isCriticalBlock()) {
+                    currentTag1 = "RED";
+                    criticalBlock.setText(soiiapplication.SOIIApplication.BUNDLE.getString("2blocks1"));
+                } else {
+                    currentTag1 = "GREEN";
+                    criticalBlock.setText(soiiapplication.SOIIApplication.BUNDLE.getString("noblocking"));
+                }
+                currentTag2 = "YELLOW";
+            }
+            
+            if (cs.getCurrentProcessID() == 2) {
+                currentProcess.setText(soiiapplication.SOIIApplication.BUNDLE.getString("currentprocess2"));
+                if (cs.isCriticalBlock()) {
+                    criticalBlock.setText(soiiapplication.SOIIApplication.BUNDLE.getString("1blocks2"));
+                    currentTag2 = "RED";
+                } else {
+                    currentTag2 = "GREEN";
+                    criticalBlock.setText(soiiapplication.SOIIApplication.BUNDLE.getString("noblocking"));
+                }
+                if(simulationMode == 1 && cs.getProcess1CurrentLine() >= 6 && cs.getProcess2CurrentLine() >= 2)
+                    currentTag1 = "NOTHING";
+                else
+                    currentTag1 = "YELLOW";
+            }
+            if (cs.getWhoIsInCriticalRegion() == 0) {
+                criticalRegion.setText(soiiapplication.SOIIApplication.BUNDLE.getString("nocritical"));
+            } else if (cs.getWhoIsInCriticalRegion() == 1) {
+                criticalRegion.setText(soiiapplication.SOIIApplication.BUNDLE.getString("critical1"));
+            } else {
+                criticalRegion.setText(soiiapplication.SOIIApplication.BUNDLE.getString("critical2"));
+            }
+            
+            updateTable(process_1_tableColumn_instr, instructions_1, firstLastLine, cs.getProcess1CurrentLine(), currentTag1, lastTag1);
+            if (firstLastLine != cs.getProcess1CurrentLine()) {
+                firstLastLine = cs.getProcess1CurrentLine();
+            }
+            
+            updateTable(process_2_tableColumn_instr, instructions_2, secondLastLine, cs.getProcess2CurrentLine(), currentTag2, lastTag2);
+            if (secondLastLine != cs.getProcess2CurrentLine()) {
+                secondLastLine = cs.getProcess2CurrentLine();
+            }
+            
+            lastTag1 = currentTag1;
+            lastTag2 = currentTag2;
         }
-
-        updateTable(process_1_tableColumn_instr, instructions_1, firstLastLine, cs.getProcess1CurrentLine(), currentTag1, lastTag1);
-        if (firstLastLine != cs.getProcess1CurrentLine()) {
-            firstLastLine = cs.getProcess1CurrentLine();
-        }
-
-        updateTable(process_2_tableColumn_instr, instructions_2, secondLastLine, cs.getProcess2CurrentLine(), currentTag2, lastTag2);
-        if (secondLastLine != cs.getProcess2CurrentLine()) {
-            secondLastLine = cs.getProcess2CurrentLine();
-        }
-
-        lastTag1 = currentTag1;
-        lastTag2 = currentTag2;
+        
     }
-
+    
     private void updateTable(TableColumn<Instruction, String> process, ObservableList<Instruction> inst, int lastLine, int currentLine, String currentTag, String lastTag) {
         Instruction x;
         if (lastLine != 0) {
@@ -319,19 +330,19 @@ public class SimulationController implements Initializable {
                 inst.set(lastLine, x);
             }
         }
-
+        
         if (currentLine != 0) {
             x = inst.get(currentLine);
             x.setInstr(x.getInstr() + currentTag);
             inst.set(currentLine, x);
         }
-
+        
         process.setCellFactory(column -> {
             return new TableCell<Instruction, String>() {
                 @Override
                 protected void updateItem(String item, boolean empty) {
                     super.updateItem(item, empty);
-
+                    
                     if (item == null || empty) {
                         setText(null);
                         setStyle("");
@@ -341,7 +352,7 @@ public class SimulationController implements Initializable {
                         } else {
                             setText(item);
                         }
-
+                        
                         // Style all dates in March with a different color.
                         if (item.contains(currentTag) && currentTag.equals("GREEN")) {
                             setTextFill(Color.WHITE);

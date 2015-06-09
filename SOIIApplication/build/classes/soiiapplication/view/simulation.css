@@ -3,17 +3,25 @@
  */
 
 .mainFxmlClass {
-        -fx-background-image: url("pictures/background.png");
+    -fx-background-image:url("pictures/background.png");
 }
 
 #currentProcess {
-        -fx-background-color:white;
+    -fx-background-color:white;
+    -fx-effect: dropshadow( one-pass-box , black , 8 , 0.0 , 1.5 , 0 );
 }
 
 #criticalRegion {
-        -fx-background-color:white;
+    -fx-background-color:white;
+    -fx-effect: dropshadow( one-pass-box , black , 8 , 0.0 , 1.5 , 0 );
 }
 
 #criticalBlock {
-        -fx-background-color:white;
+    -fx-background-color:white;
+    -fx-effect: dropshadow( one-pass-box , black , 8 , 0.0 , 1.5 , 0 );
+}
+
+#intructionalLabel {
+    -fx-background-color:white;
+    -fx-effect: dropshadow( one-pass-box , black , 8 , 0.0 , 1.5 , 0 );
 }
