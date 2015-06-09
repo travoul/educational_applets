@@ -10,7 +10,7 @@
 // TODO:
 /*
  ----- CRIAR OUTROS MODOS DE EXECUÇÃO DO MOUTOR
-        |-> FORÇANDO BLOQUEIO NA REGIÃO CRÍTICA, POR EXEMPLO
+ |-> FORÇANDO BLOQUEIO NA REGIÃO CRÍTICA, POR EXEMPLO
  ----- CRIAR BOTÃO DE AJUDA E SEÇÃO DE AJUDA NO SIMULADOR PARA INSTRUCÕES
  ----- EDITAR O DID YOU KNOW
  ----- INTERNACIONALIZAR CÓDIGO DA REGIÃO CRíTICA
@@ -68,6 +68,11 @@ public class SimulationController implements Initializable {
     private ArrayList<CurrentState> generatedStates;
     private int listPosition, firstLastLine, secondLastLine;
     private String currentTag1, currentTag2, lastTag1, lastTag2;
+    private int simulationMode;
+
+    public void setSimulationMode(int mode) {
+        this.simulationMode = mode;
+    }
 
     @FXML
     private Label currentProcess;
@@ -134,41 +139,59 @@ public class SimulationController implements Initializable {
     }
 
     private void addInstructions() {
-        addInstructions_1();
-        addInstructions_2();
+
+        if (simulationMode == 1) {
+            addInstructionsMutualExclusion(instructions_1);
+            addInstructionsMutualExclusion(instructions_2);
+        } else if (simulationMode == 2) {
+            addInstructionsNoMutualExclusion(instructions_1);
+            addInstructionsNoMutualExclusion(instructions_2);
+        } else if (simulationMode == 3) {
+            addInstructionsRandom(instructions_1);
+            addInstructionsRandom(instructions_2);
+        }
     }
 
-    private void addInstructions_1() {
-        instructions_1.add(new Instruction("1", "void thread(){"));
-        instructions_1.add(new Instruction("2", "\ttype variables;"));
-        instructions_1.add(new Instruction("3", "\twhile(TRUE) {"));
-        instructions_1.add(new Instruction("4", "\t\tdoWhateverNonCritical();"));
-        instructions_1.add(new Instruction("5", "\t\tenterCriticalRegion();"));
-        instructions_1.add(new Instruction("6", "\t\tdoWhateverCritical();"));
-        instructions_1.add(new Instruction("7", "\t\tleaveCriticalRegion();"));
-        instructions_1.add(new Instruction("8", "\t\tdoWhateverNonCritical();"));
-        instructions_1.add(new Instruction("9", "\t}"));
-        instructions_1.add(new Instruction("10", "}"));
+    private void addInstructionsMutualExclusion(ObservableList<Instruction> instructions) {
+        instructions.add(new Instruction("1", "void thread(){"));
+        instructions.add(new Instruction("2", "\tint local_variable;"));
+        instructions.add(new Instruction("3", "\tlock_critical_region();"));
+        instructions.add(new Instruction("4", "\tlocal_variable = read_from_memory(address);"));
+        instructions.add(new Instruction("5", "\tlocal_variable++;"));
+        instructions.add(new Instruction("6", "\twrite_to_memory(address, local_variable);"));
+        instructions.add(new Instruction("7", "\tunlock_critical_region();"));
+        instructions.add(new Instruction("8", "}"));
+
     }
 
-    private void addInstructions_2() {
-        instructions_2.add(new Instruction("1", "void thread(){"));
-        instructions_2.add(new Instruction("2", "\ttype variables;"));
-        instructions_2.add(new Instruction("3", "\twhile(TRUE) {"));
-        instructions_2.add(new Instruction("4", "\t\tdoWhateverNonCritical();"));
-        instructions_2.add(new Instruction("5", "\t\tenterCriticalRegion();"));
-        instructions_2.add(new Instruction("6", "\t\tdoWhateverCritical();"));
-        instructions_2.add(new Instruction("7", "\t\tleaveCriticalRegion();"));
-        instructions_2.add(new Instruction("8", "\t\tdoWhateverNonCritical();"));
-        instructions_2.add(new Instruction("9", "\t}"));
-        instructions_2.add(new Instruction("10", "}"));
+    private void addInstructionsNoMutualExclusion(ObservableList<Instruction> instructions) {
+        instructions.add(new Instruction("1", "void thread(){"));
+        instructions.add(new Instruction("2", "\tint local_variable;"));
+        instructions.add(new Instruction("3", "\tlocal_variable = read_from_memory(address);"));
+        instructions.add(new Instruction("4", "\tlocal_variable++;"));
+        instructions.add(new Instruction("5", "\twrite_to_memory(address, local_variable);"));
+        instructions.add(new Instruction("6", "}"));
+
     }
-    
+
+    private void addInstructionsRandom(ObservableList<Instruction> instructions) {
+        instructions.add(new Instruction("1", "void thread(){"));
+        instructions.add(new Instruction("2", "\ttype variables;"));
+        instructions.add(new Instruction("3", "\twhile(TRUE) {"));
+        instructions.add(new Instruction("4", "\t\tdoWhateverNonCritical();"));
+        instructions.add(new Instruction("5", "\t\tenterCriticalRegion();"));
+        instructions.add(new Instruction("6", "\t\tdoWhateverCritical();"));
+        instructions.add(new Instruction("7", "\t\tleaveCriticalRegion();"));
+        instructions.add(new Instruction("8", "\t\tdoWhateverNonCritical();"));
+        instructions.add(new Instruction("9", "\t}"));
+        instructions.add(new Instruction("10", "}"));
+    }
+
     @FXML
     private void backButtonClicked(MouseEvent event) throws Exception {
         Scene currentScene = ((Node) event.getSource()).getScene();
         Stage currentStage = (Stage) currentScene.getWindow();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("MainMenu.fxml"),soiiapplication.SOIIApplication.BUNDLE);
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("MainMenu.fxml"), soiiapplication.SOIIApplication.BUNDLE);
         Parent root = (Parent) loader.load();
         Scene scene = new Scene(root);
         currentStage.setScene(scene);
