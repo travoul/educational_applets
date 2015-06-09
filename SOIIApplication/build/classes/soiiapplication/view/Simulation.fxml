@@ -14,7 +14,7 @@
     </stylesheets>
    <children>
       <Button layoutX="470.0" layoutY="560.0" mnemonicParsing="false" onMouseClicked="#backButtonClicked" text="%back" />
-      <Button layoutX="510.0" layoutY="518.0" mnemonicParsing="false" onMouseClicked="#nextButtonClicked" prefHeight="26.0" prefWidth="82.0" text="%next" />
+      <Button fx:id="nextButton" layoutX="510.0" layoutY="518.0" mnemonicParsing="false" onMouseClicked="#nextButtonClicked" prefHeight="26.0" prefWidth="82.0" text="%next" />
       <Button fx:id="previousButton" layoutX="402.0" layoutY="518.0" mnemonicParsing="false" onMouseClicked="#previousButtonClicked" text="%previous" />
       <HBox layoutX="27.0" layoutY="69.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="100.0" AnchorPane.bottomAnchor="200.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="50.0">
          <children>

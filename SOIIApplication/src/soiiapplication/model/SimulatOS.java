@@ -23,25 +23,78 @@ public class SimulatOS {
     private ProcessModel other;
     private int currentProcessID;
     private boolean criticalBlock;
-    private int maxLoops;
+    private int simulationMode;
+    private int currentStep;
+
+    public int getCurrentStep() {
+        return currentStep;
+    }
     
     public SimulatOS(int num1, int start1, int end1, int sloop1, int num2, 
-                                    int start2, int end2, int sloop2, int max) {
-        first = new ProcessModel(num1, start1, end1, sloop1);
-        second = new ProcessModel(num2, start2, end2,sloop2);
-        maxLoops = max;
+                                    int start2, int end2, int sloop2, int mode) {
+        first = new ProcessModel(num1, start1, end1, sloop1, mode);
+        second = new ProcessModel(num2, start2, end2, sloop2, mode);
+        simulationMode = mode;
+        currentStep = 0;
     }
     
     public CurrentState simulate() {
         //while(first.getLoop() < maxLoops || second.getLoop() < maxLoops) {
-            schedule();
+            if(simulationMode == 1)
+            {
+                scheduleCrit();
+                currentStep++;
+            }
+            
+            else if(simulationMode == 2)
+            {
+                schedulenonCrit();
+                currentStep++;
+            }
+            
+            else if(simulationMode == 3)
+                scheduleRandom();
+            
             criticalBlock = current.nextLine(other);
             //System.out.println("Active Process: " + current.hashCode() + " in line: " + current.getCurrentLine());
             //System.out.println("Other Process: " + other.hashCode() + " in line: " + other.getCurrentLine());
             return new CurrentState(currentProcessID,  first.getCurrentLine(), second.getCurrentLine(), first.isInCritical(), second.isInCritical(), criticalBlock);
     }
+    
+    private void scheduleCrit() {
+   
+        if(currentStep == 0 || currentStep == 1 || currentStep == 4 || currentStep == 6 || currentStep == 8 || currentStep == 10 )
+        {
+            currentProcessID = 1;
+            current = first;
+            other = second;
+        }
+        else
+        {
+            currentProcessID = 2;
+            current = second;
+            other = first;
+        }
+    }
+    
+    private void schedulenonCrit() {
+         
+        if(currentStep == 0 || currentStep == 1 || currentStep == 6 || currentStep == 7)
+        {
+            currentProcessID = 1;
+            current = first;
+            other = second;
+        }
+        else
+        {
+            currentProcessID = 2;
+            current = second;
+            other = first;
+        }
+        
+    }
 
-    public void schedule() {
+    private void scheduleRandom() {
         Random generator = new Random();
         if(generator.nextBoolean()) {
             currentProcessID = 1;

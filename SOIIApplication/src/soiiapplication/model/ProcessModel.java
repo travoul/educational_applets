@@ -26,8 +26,9 @@ public class ProcessModel {
     private int startOfLoop;
     private boolean inCritical;
     private int loop;
+    private int simulationMode;
     
-    public ProcessModel(int num, int start, int end, int sloop) {
+    public ProcessModel(int num, int start, int end, int sloop, int mode) {
         numberOfLines = num;
         currentLine = 0;
         startOfCR = start;
@@ -35,6 +36,7 @@ public class ProcessModel {
         startOfLoop = sloop;
         inCritical = false;
         loop = 0;
+        simulationMode = mode;
     }
     
     public boolean nextLine(ProcessModel other) {
@@ -55,9 +57,11 @@ public class ProcessModel {
     }
     
     public void checkCriticalRegion() {
-        if(currentLine == startOfCR)
+        if(simulationMode == 2)
+            this.inCritical = false;
+        else if(currentLine == startOfCR)
             this.inCritical = true;
-        else if (currentLine == 1 + endOfCR)
+        else if (currentLine == endOfCR)
             this.inCritical = false;
     }
 

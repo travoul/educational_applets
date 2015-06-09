@@ -9,12 +9,13 @@
 //       Shina mandou beijo. Raul
 // TODO:
 /*
- ----- CRIAR OUTROS MODOS DE EXECUÇÃO DO MOUTOR
- |-> FORÇANDO BLOQUEIO NA REGIÃO CRÍTICA, POR EXEMPLO
+ ----- FAZER AS TABELAS FINALIZAREM SEM COR NAS SIMULAÇÕES 1 E 2
+ ----- MUDAR AS LABELS PARA INDICAR O CONTEUDO NAS SIMULAÇÕES 1 E 2
  ----- CRIAR BOTÃO DE AJUDA E SEÇÃO DE AJUDA NO SIMULADOR PARA INSTRUCÕES
  ----- EDITAR O DID YOU KNOW
  ----- INTERNACIONALIZAR CÓDIGO DA REGIÃO CRíTICA
  ----- FAZER BOTÃO "NEXT" APARECER COMO "INICIAR" EM UM PRIMEIRO MOMENTO
+ ----- BOTÃO "PRÓXIMO PASSO" ESTA "PRÓXIMO P..."
  */
 
 /*
@@ -81,6 +82,15 @@ public class SimulationController implements Initializable {
         process_2_tableColumn_instr.setCellValueFactory(cellData -> cellData.getValue().instrProperty());
         process_1_tableColumn_num.setCellValueFactory(cellData -> cellData.getValue().numberProperty());
         process_2_tableColumn_num.setCellValueFactory(cellData -> cellData.getValue().numberProperty());
+        
+        if(simulationMode == 1)
+            simulator = new SimulatOS(6, 2, 6, -1, 6, 2, 6, -1, 1);
+        
+        else if(simulationMode == 2)
+            simulator = new SimulatOS(4, -1, -1, -1, 4, -1, -1, -1, 2);
+        
+        else if(simulationMode == 3)
+            simulator = new SimulatOS(7, 4, 6, 2, 7, 4, 6, 2, 3);
     }
 
     @FXML
@@ -94,6 +104,9 @@ public class SimulationController implements Initializable {
 
     @FXML
     private Button previousButton;
+    
+    @FXML
+    private Button nextButton;
 
     @FXML
     private TableView<Instruction> process_1_tableView;
@@ -129,7 +142,7 @@ public class SimulationController implements Initializable {
         lastTag2 = null;
         previousButton.setDisable(true);
         previousButton.setOpacity(0.5);
-        simulator = new SimulatOS(7, 4, 6, 2, 7, 4, 6, 2, 3);
+        
         generatedStates = new ArrayList<>();
 
 
@@ -138,6 +151,8 @@ public class SimulationController implements Initializable {
 
         process_1_tableView.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
         process_2_tableView.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
+        
+        nextButton.setText(soiiapplication.SOIIApplication.BUNDLE.getString("Init"));
     }
 
     private void addInstructions() {
@@ -201,18 +216,29 @@ public class SimulationController implements Initializable {
 
     @FXML
     private void nextButtonClicked(MouseEvent event) throws Exception {
+        nextButton.setText(soiiapplication.SOIIApplication.BUNDLE.getString("next"));
+                
         if (listPosition > 0) {
             previousButton.setDisable(false);
             previousButton.setOpacity(1.0);
         }
         if (listPosition == generatedStates.size()) {
             currentState = simulator.simulate();
-
+            if( (simulationMode == 1 && simulator.getCurrentStep() > 15) || (simulationMode == 2 && simulator.getCurrentStep() > 7) )
+            {
+                nextButton.setDisable(true);
+                nextButton.setOpacity(0.5);
+            }
             generatedStates.add(currentState);
             listPosition++;
         } else {
             currentState = generatedStates.get(listPosition);
             listPosition++;
+            if( listPosition == generatedStates.size() )//cerificacao para caso de simulacao com passos definidos
+            {
+                nextButton.setDisable(true);
+                nextButton.setOpacity(0.5);
+            }
         }
         System.out.println("Mode:"+simulationMode);
         System.out.println("NEXT " + currentState.hashCode());
@@ -228,7 +254,10 @@ public class SimulationController implements Initializable {
             previousButton.setDisable(true);
             previousButton.setOpacity(0.5);
         }
-
+        
+        nextButton.setDisable(false);
+        nextButton.setOpacity(1.0);
+        
         System.out.println("PREVIOUS " + currentState.hashCode());
         displayState(currentState);
     }
