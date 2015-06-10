@@ -40,7 +40,7 @@ public class ProcessModel {
     }
     
     public boolean nextLine(ProcessModel other) {
-        if((currentLine+1) != startOfCR || !other.isInCritical()) {
+        if(simulationMode == 2 || (currentLine+1) != startOfCR || !other.isInCritical()) {
             currentLine++;
             if(currentLine > numberOfLines) {
                 System.out.println("\n\nLOOPOU\n");
@@ -57,9 +57,7 @@ public class ProcessModel {
     }
     
     public void checkCriticalRegion() {
-        if(simulationMode == 2)
-            this.inCritical = false;
-        else if(currentLine == startOfCR)
+        if(currentLine == startOfCR)
             this.inCritical = true;
         else if (currentLine == endOfCR)
             this.inCritical = false;

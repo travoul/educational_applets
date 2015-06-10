@@ -28,8 +28,10 @@ public class CurrentState {
              whoIsInCriticalRegion = 0;
         else if(firstCR && !secondCR)
             whoIsInCriticalRegion = 1;
-        else
+        else if(!firstCR && secondCR)
             whoIsInCriticalRegion = 2;
+        else 
+            whoIsInCriticalRegion = 3;
         
         criticalBlock = block;
     }

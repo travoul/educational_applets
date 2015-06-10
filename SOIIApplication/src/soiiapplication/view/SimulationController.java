@@ -86,7 +86,7 @@ public class SimulationController implements Initializable {
         if (simulationMode == 1) {
             simulator = new SimulatOS(6, 2, 6, -1, 6, 2, 6, -1, 1);
         } else if (simulationMode == 2) {
-            simulator = new SimulatOS(4, -1, -1, -1, 4, -1, -1, -1, 2);
+            simulator = new SimulatOS(4, 2, 4, -1, 4, 2, 4, -1, 2);
         } else if (simulationMode == 3) {
             simulator = new SimulatOS(7, 4, 6, 2, 7, 4, 6, 2, 3);
         }
@@ -305,8 +305,10 @@ public class SimulationController implements Initializable {
                 criticalRegion.setText(soiiapplication.SOIIApplication.BUNDLE.getString("nocritical"));
             } else if (cs.getWhoIsInCriticalRegion() == 1) {
                 criticalRegion.setText(soiiapplication.SOIIApplication.BUNDLE.getString("critical1"));
-            } else {
+            } else if(cs.getWhoIsInCriticalRegion() == 2){
                 criticalRegion.setText(soiiapplication.SOIIApplication.BUNDLE.getString("critical2"));
+            } else {
+                criticalRegion.setText(soiiapplication.SOIIApplication.BUNDLE.getString("critical1and2"));
             }
             
             updateTable(process_1_tableColumn_instr, instructions_1, firstLastLine, cs.getProcess1CurrentLine(), currentTag1, lastTag1);
