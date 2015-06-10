@@ -10,62 +10,45 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" stylesheets="@Background.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="soiiapplication.view.MainMenuController">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" stylesheets="@mainmenu.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="soiiapplication.view.MainMenuController">
    <children>
-      <BorderPane prefHeight="600.0" prefWidth="1000.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-         <left>
-            <VBox prefHeight="200.0" prefWidth="100.0" spacing="20.0" BorderPane.alignment="CENTER">
+      <HBox alignment="CENTER" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="100.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Region layoutX="90.0" maxHeight="-Infinity" minHeight="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="100.0" AnchorPane.leftAnchor="0.0" HBox.hgrow="ALWAYS" />
+            <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="800.0" spacing="20.0">
                <children>
-                  <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#firstButtonMouseClicked" onMouseEntered="#firstButtonMouseEntered" onMouseExited="#allButtonsMouseExited" prefHeight="30.0" prefWidth="120.0" text="%readableContent" VBox.vgrow="NEVER" />
-                  <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#secondButtonMouseClicked" onMouseEntered="#secondButtonMouseEntered" onMouseExited="#allButtonsMouseExited" prefHeight="30.0" prefWidth="120.0" text="%simulation" VBox.vgrow="NEVER" />
-                  <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#thirdButtonMouseClicked" onMouseEntered="#thirdButtonMouseEntered" onMouseExited="#allButtonsMouseExited" prefHeight="30.0" prefWidth="120.0" text="%credits" VBox.vgrow="NEVER" />
-                  <Button fx:id="language" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#mouseClickedLanguage" onMouseEntered="#fourthButtonMouseEntered" onMouseExited="#allButtonsMouseExited" prefHeight="30.0" prefWidth="120.0" text="%changeLanguage" VBox.vgrow="NEVER" />
-                  <Region prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="38.0" prefWidth="800.0" text="%title" textAlignment="CENTER" textFill="#575656">
+                     <font>
+                        <Font name="System Bold" size="26.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="32.0" prefWidth="800.0" text="%menuName" textAlignment="CENTER" textFill="#575656">
+                     <font>
+                        <Font name="System Bold" size="22.0" />
+                     </font>
+                  </Label>
                </children>
-               <BorderPane.margin>
-                  <Insets left="40.0" top="10.0" />
-               </BorderPane.margin>
             </VBox>
-         </left>
-         <bottom>
-            <Label fx:id="informativeLabel" BorderPane.alignment="CENTER">
-               <BorderPane.margin>
-                  <Insets bottom="30.0" />
-               </BorderPane.margin>
-            </Label>
-         </bottom>
-         <top>
-            <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-               <children>
-                  <HBox AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
-                     <children>
-                        <Region layoutX="90.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="200.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" HBox.hgrow="ALWAYS" />
-                        <Group>
-                           <children>
-                              <Label alignment="CENTER" contentDisplay="CENTER" layoutX="325.0" layoutY="37.0" prefHeight="32.0" prefWidth="987.0" text="%menuName" textAlignment="CENTER" textFill="#575656">
-                                 <font>
-                                    <Font name="Monaco" size="22.0" />
-                                 </font>
-                              </Label>
-                              <Label alignment="CENTER" contentDisplay="CENTER" layoutX="314.0" layoutY="87.0" prefHeight="38.0" prefWidth="1000.0" text="%title" textAlignment="CENTER" textFill="#575656">
-                                 <font>
-                                    <Font name="Monaco" size="26.0" />
-                                 </font>
-                                 <padding>
-                                    <Insets top="20.0" />
-                                 </padding>
-                              </Label>
-                           </children>
-                           <HBox.margin>
-                              <Insets top="20.0" />
-                           </HBox.margin>
-                        </Group>
-                        <Region layoutX="803.0" layoutY="3.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="200.0" prefWidth="200.0" AnchorPane.rightAnchor="0.0" HBox.hgrow="ALWAYS" />
-                     </children>
-                  </HBox>
-               </children>
-            </AnchorPane>
-         </top>
-      </BorderPane>
+            <Region layoutX="803.0" layoutY="3.0" maxHeight="-Infinity" minHeight="-Infinity" nodeOrientation="RIGHT_TO_LEFT" prefHeight="100.0" AnchorPane.rightAnchor="0.0" HBox.hgrow="ALWAYS" />
+         </children>
+      </HBox>
+      <VBox alignment="CENTER" layoutX="47.0" layoutY="211.0" spacing="20.0" AnchorPane.leftAnchor="80.0">
+         <children>
+            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#firstButtonMouseClicked" onMouseEntered="#firstButtonMouseEntered" onMouseExited="#allButtonsMouseExited" prefHeight="30.0" prefWidth="120.0" text="%readableContent" VBox.vgrow="NEVER" />
+            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#secondButtonMouseClicked" onMouseEntered="#secondButtonMouseEntered" onMouseExited="#allButtonsMouseExited" prefHeight="30.0" prefWidth="120.0" text="%simulation" VBox.vgrow="NEVER" />
+            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#thirdButtonMouseClicked" onMouseEntered="#thirdButtonMouseEntered" onMouseExited="#allButtonsMouseExited" prefHeight="30.0" prefWidth="120.0" text="%credits" VBox.vgrow="NEVER" />
+            <Button fx:id="language" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#mouseClickedLanguage" onMouseEntered="#fourthButtonMouseEntered" onMouseExited="#allButtonsMouseExited" prefHeight="30.0" prefWidth="120.0" text="%changeLanguage" VBox.vgrow="NEVER" />
+         </children>
+      </VBox>
+      <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <Region layoutX="90.0" maxHeight="-Infinity" minHeight="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="100.0" AnchorPane.leftAnchor="0.0" HBox.hgrow="ALWAYS" />
+            <Label fx:id="informativeLabel" alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" prefWidth="600.0" />
+            <Region layoutX="803.0" layoutY="3.0" maxHeight="-Infinity" minHeight="-Infinity" nodeOrientation="RIGHT_TO_LEFT" prefHeight="100.0" AnchorPane.rightAnchor="0.0" HBox.hgrow="ALWAYS" />
+         </children>
+      </HBox>
    </children>
 </AnchorPane>

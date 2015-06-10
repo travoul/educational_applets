@@ -16,7 +16,7 @@
    <children>
       <BorderPane prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <center>
-            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="20.0" BorderPane.alignment="CENTER">
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="40.0" BorderPane.alignment="CENTER">
                <children>
                   <Button maxHeight="-Infinity" minHeight="-Infinity" mnemonicParsing="false" onMouseClicked="#mutualClicked" prefHeight="40.0" text="%mutualExclusion" />
                   <Button maxHeight="-Infinity" minHeight="-Infinity" mnemonicParsing="false" onMouseClicked="#noMutualClicked" prefHeight="40.0" text="%noMutualExclusion" />
@@ -24,22 +24,15 @@
                </children>
             </VBox>
          </center>
-         <bottom>
-            <Button mnemonicParsing="false" onMouseClicked="#backButtonClicked" text="%backButtonChooseSimulationMenu" BorderPane.alignment="CENTER">
-               <BorderPane.margin>
-                  <Insets bottom="20.0" />
-               </BorderPane.margin>
-            </Button>
-         </bottom>
          <top>
-            <HBox maxHeight="-Infinity" minHeight="-Infinity" prefHeight="100.0" prefWidth="200.0" spacing="20.0" BorderPane.alignment="CENTER">
+            <HBox maxHeight="-Infinity" minHeight="-Infinity" prefHeight="100.0" BorderPane.alignment="CENTER">
                <children>
-                  <Region prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
-                  <VBox prefHeight="200.0" prefWidth="100.0">
+                  <Region maxHeight="-Infinity" minHeight="-Infinity" prefHeight="100.0" HBox.hgrow="ALWAYS" />
+                  <VBox alignment="CENTER" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="100.0">
                      <children>
                         <Label alignment="CENTER" contentDisplay="CENTER" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="400.0" text="%chooseMenuTitle" textFill="#575656">
                            <VBox.margin>
-                              <Insets top="10.0" />
+                              <Insets />
                            </VBox.margin>
                            <font>
                               <Font size="20.0" />
@@ -47,13 +40,22 @@
                         </Label>
                      </children>
                   </VBox>
-                  <Region prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                  <Region maxHeight="-Infinity" minHeight="-Infinity" prefHeight="100.0" HBox.hgrow="ALWAYS" />
                </children>
                <BorderPane.margin>
                   <Insets />
                </BorderPane.margin>
             </HBox>
          </top>
+         <bottom>
+            <HBox alignment="CENTER" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="100.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Region maxHeight="-Infinity" minHeight="-Infinity" prefHeight="100.0" HBox.hgrow="ALWAYS" />
+                  <Button mnemonicParsing="false" onMouseClicked="#backButtonClicked" text="%backButtonChooseSimulationMenu" />
+                  <Region maxHeight="-Infinity" minHeight="-Infinity" prefHeight="100.0" HBox.hgrow="ALWAYS" />
+               </children>
+            </HBox>
+         </bottom>
       </BorderPane>
    </children>
 </AnchorPane>

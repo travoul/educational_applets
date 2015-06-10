@@ -12,6 +12,6 @@ and open the template in the editor.
     -fx-background-image: url("pictures/background.png");
 }
 
-#BorderPaneMainMenu{
-    -fx-background-image: url("pictures/background.png");	
+#informativeLabel{
+    -fx-background-color: white;
 }
