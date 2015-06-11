@@ -28,7 +28,7 @@
       <HBox prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="460.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <children>
             <Region prefHeight="100.0" HBox.hgrow="ALWAYS" />
-            <Label fx:id="intructionalLabel" alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="100.0" prefWidth="800.0" textFill="#575656">
+            <Label fx:id="instructionalLabel" alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="100.0" prefWidth="800.0" textFill="#575656">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font></Label>

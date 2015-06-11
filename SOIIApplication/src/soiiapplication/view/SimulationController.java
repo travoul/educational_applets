@@ -9,12 +9,10 @@
 //       Shina mandou beijo. Raul
 // TODO:
 /*
- ----- FAZER AS TABELAS FINALIZAREM SEM COR NAS SIMULAÇÕES 1 E 2
  ----- MUDAR AS LABELS PARA INDICAR O CONTEUDO NAS SIMULAÇÕES 1 E 2
  ----- CRIAR BOTÃO DE AJUDA E SEÇÃO DE AJUDA NO SIMULADOR PARA INSTRUCÕES
  ----- EDITAR O DID YOU KNOW
  ----- INTERNACIONALIZAR CÓDIGO DA REGIÃO CRíTICA
- ----- FAZER BOTÃO "NEXT" APARECER COMO "INICIAR" EM UM PRIMEIRO MOMENTO
  ----- BOTÃO "PRÓXIMO PASSO" ESTA "PRÓXIMO P..."
  */
 
@@ -323,6 +321,30 @@ public class SimulationController implements Initializable {
             
             lastTag1 = currentTag1;
             lastTag2 = currentTag2;
+        }
+        
+        /*generate step by step text for non mutual exclusion simulation*/
+        if(simulationMode == 2)
+        {
+            if(listPosition == 1)
+                instructionalLabel.setText(soiiapplication.SOIIApplication.BUNDLE.getString("step1"));
+            if(listPosition == 2)
+                instructionalLabel.setText(soiiapplication.SOIIApplication.BUNDLE.getString("step2"));
+            if(listPosition == 3)
+                instructionalLabel.setText(soiiapplication.SOIIApplication.BUNDLE.getString("step3"));
+            if(listPosition == 4)
+                instructionalLabel.setText(soiiapplication.SOIIApplication.BUNDLE.getString("step4"));
+            if(listPosition == 5)
+                instructionalLabel.setText(soiiapplication.SOIIApplication.BUNDLE.getString("step5"));
+            if(listPosition == 6)
+                instructionalLabel.setText(soiiapplication.SOIIApplication.BUNDLE.getString("step6"));
+            if(listPosition == 7)
+                instructionalLabel.setText(soiiapplication.SOIIApplication.BUNDLE.getString("step7"));
+            if(listPosition == 8)
+                instructionalLabel.setText(soiiapplication.SOIIApplication.BUNDLE.getString("step8"));
+            if(listPosition == 9)
+                instructionalLabel.setText(soiiapplication.SOIIApplication.BUNDLE.getString("step9"));
+            
         }
         
     }
