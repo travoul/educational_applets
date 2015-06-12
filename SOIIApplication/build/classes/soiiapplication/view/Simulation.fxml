@@ -17,7 +17,7 @@
       <HBox alignment="CENTER" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <Region maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" HBox.hgrow="ALWAYS" />
-            <Label text="%simulationMenuTitle" textFill="#575656">
+            <Label fx:id="title" textFill="#575656">
                <font>
                   <Font size="26.0" />
                </font>

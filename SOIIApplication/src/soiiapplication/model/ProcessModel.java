@@ -43,7 +43,7 @@ public class ProcessModel {
         if(simulationMode == 2 || (currentLine+1) != startOfCR || !other.isInCritical()) {
             currentLine++;
             if(currentLine > numberOfLines) {
-                System.out.println("\n\nLOOPOU\n");
+                //System.out.println("\n\nLOOPOU\n");
                 loop++;
                 currentLine = startOfLoop;
             }
@@ -51,7 +51,7 @@ public class ProcessModel {
             return false;
         }
         else {
-            System.out.println("\n\nTEM GENTE NA REGIAO :)\n");
+            //System.out.println("\n\nTEM GENTE NA REGIAO :)\n");
             return true;
         }
     }

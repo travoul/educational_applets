@@ -103,6 +103,9 @@ public class SimulationController implements Initializable {
     private Label instructionalLabel;
     
     @FXML
+    private Label title;
+    
+    @FXML
     private Button backButton;
     
     @FXML
@@ -178,7 +181,7 @@ public class SimulationController implements Initializable {
         instructions.add(new Instruction("3", "\tlock_critical_region();"));
         instructions.add(new Instruction("4", "\tlocal_variable = read_from_memory(0xF4D9012C);"));
         instructions.add(new Instruction("5", "\tlocal_variable++;"));
-        instructions.add(new Instruction("6", "\twrite_to_memory(address, local_variable);"));
+        instructions.add(new Instruction("6", "\twrite_to_memory(0xF4D9012C, local_variable);"));
         instructions.add(new Instruction("7", "\tunlock_critical_region();"));
         instructions.add(new Instruction("8", "}"));
         
@@ -189,7 +192,7 @@ public class SimulationController implements Initializable {
         instructions.add(new Instruction("2", "\tint local_variable;"));
         instructions.add(new Instruction("3", "\tlocal_variable = read_from_memory(0xF4D9012C);"));
         instructions.add(new Instruction("4", "\tlocal_variable++;"));
-        instructions.add(new Instruction("5", "\twrite_to_memory(address, local_variable);"));
+        instructions.add(new Instruction("5", "\twrite_to_memory(0xF4D9012C, local_variable);"));
         instructions.add(new Instruction("6", "}"));
         
     }
@@ -221,7 +224,7 @@ public class SimulationController implements Initializable {
     private void nextButtonClicked(MouseEvent event) throws Exception {
         nextButton.setText(soiiapplication.SOIIApplication.BUNDLE.getString("next"));
         
-        if (listPosition > 0) {
+        if (listPosition >= 0) {
             previousButton.setDisable(false);
             previousButton.setOpacity(1.0);
         }
@@ -249,10 +252,11 @@ public class SimulationController implements Initializable {
     
     @FXML
     private void previousButtonClicked(MouseEvent event) throws Exception {
+        listPosition--;
         
-        currentState = generatedStates.get(--listPosition - 1);
-        
-        if (listPosition == 1) {
+        if(listPosition > 0)
+            currentState = generatedStates.get(listPosition - 1);
+        else {
             previousButton.setDisable(true);
             previousButton.setOpacity(0.5);
         }
@@ -265,35 +269,75 @@ public class SimulationController implements Initializable {
     }
     
     private void printInformation() {
-        if(listPosition == 0) {
-            if(simulationMode == 2)
-                instructionalLabel.setText(soiiapplication.SOIIApplication.BUNDLE.getString("step0"));
-        }
-        else if(simulationMode == 1) {
-                instructionalLabel.setText(soiiapplication.SOIIApplication.BUNDLE.getString("step1"));
+        
+        if(simulationMode == 1) {
+            title.setText(soiiapplication.SOIIApplication.BUNDLE.getString("withsimulationMenuTitle"));
+            if(listPosition == 0)
+                instructionalLabel.setText(soiiapplication.SOIIApplication.BUNDLE.getString("withstep0"));
+            else if(listPosition == 1)
+                instructionalLabel.setText(soiiapplication.SOIIApplication.BUNDLE.getString("withstep1"));
+            else if(listPosition == 2)
+                instructionalLabel.setText(soiiapplication.SOIIApplication.BUNDLE.getString("withstep2"));
+            else if(listPosition == 3)
+                instructionalLabel.setText(soiiapplication.SOIIApplication.BUNDLE.getString("withstep3"));
+            else if(listPosition == 4)
+                instructionalLabel.setText(soiiapplication.SOIIApplication.BUNDLE.getString("withstep4"));
+            else if(listPosition == 5)
+                instructionalLabel.setText(soiiapplication.SOIIApplication.BUNDLE.getString("withstep5"));
+            else if(listPosition == 6)
+                instructionalLabel.setText(soiiapplication.SOIIApplication.BUNDLE.getString("withstep6"));
+            else if(listPosition == 7)
+                instructionalLabel.setText(soiiapplication.SOIIApplication.BUNDLE.getString("withstep7"));
+            else if(listPosition == 8)
+                instructionalLabel.setText(soiiapplication.SOIIApplication.BUNDLE.getString("withstep8"));
+            else if(listPosition == 9)
+                instructionalLabel.setText(soiiapplication.SOIIApplication.BUNDLE.getString("withstep9"));
+            else if(listPosition == 10)
+                instructionalLabel.setText(soiiapplication.SOIIApplication.BUNDLE.getString("withstep10"));
+            else if(listPosition == 11)
+                instructionalLabel.setText(soiiapplication.SOIIApplication.BUNDLE.getString("withstep11"));
+            else if(listPosition == 12)
+                instructionalLabel.setText(soiiapplication.SOIIApplication.BUNDLE.getString("withstep12"));
+            else if(listPosition == 13)
+                instructionalLabel.setText(soiiapplication.SOIIApplication.BUNDLE.getString("withstep13"));
+            else if(listPosition == 14)
+                instructionalLabel.setText(soiiapplication.SOIIApplication.BUNDLE.getString("withstep14"));
+            else if(listPosition == 15)
+                instructionalLabel.setText(soiiapplication.SOIIApplication.BUNDLE.getString("withstep15"));
+            else if(listPosition == 16)
+                instructionalLabel.setText(soiiapplication.SOIIApplication.BUNDLE.getString("withstep16"));
+            else if(listPosition == 17)
+                instructionalLabel.setText(soiiapplication.SOIIApplication.BUNDLE.getString("withstep17"));
         }
         /*generate step by step text for non mutual exclusion simulation*/
         else if(simulationMode == 2)
         { 
-            if(listPosition == 1)
-                instructionalLabel.setText(soiiapplication.SOIIApplication.BUNDLE.getString("step1"));
+            title.setText(soiiapplication.SOIIApplication.BUNDLE.getString("withoutsimulationMenuTitle"));
+            if(listPosition == 0)
+                instructionalLabel.setText(soiiapplication.SOIIApplication.BUNDLE.getString("withoutstep0"));
+            else if(listPosition == 1)
+                instructionalLabel.setText(soiiapplication.SOIIApplication.BUNDLE.getString("withoutstep1"));
             else if(listPosition == 2)
-                instructionalLabel.setText(soiiapplication.SOIIApplication.BUNDLE.getString("step2"));
+                instructionalLabel.setText(soiiapplication.SOIIApplication.BUNDLE.getString("withoutstep2"));
             else if(listPosition == 3)
-                instructionalLabel.setText(soiiapplication.SOIIApplication.BUNDLE.getString("step3"));
+                instructionalLabel.setText(soiiapplication.SOIIApplication.BUNDLE.getString("withoutstep3"));
             else if(listPosition == 4)
-                instructionalLabel.setText(soiiapplication.SOIIApplication.BUNDLE.getString("step4"));
+                instructionalLabel.setText(soiiapplication.SOIIApplication.BUNDLE.getString("withoutstep4"));
             else if(listPosition == 5)
-                instructionalLabel.setText(soiiapplication.SOIIApplication.BUNDLE.getString("step5"));
+                instructionalLabel.setText(soiiapplication.SOIIApplication.BUNDLE.getString("withoutstep5"));
             else if(listPosition == 6)
-                instructionalLabel.setText(soiiapplication.SOIIApplication.BUNDLE.getString("step6"));
+                instructionalLabel.setText(soiiapplication.SOIIApplication.BUNDLE.getString("withoutstep6"));
             else if(listPosition == 7)
-                instructionalLabel.setText(soiiapplication.SOIIApplication.BUNDLE.getString("step7"));
+                instructionalLabel.setText(soiiapplication.SOIIApplication.BUNDLE.getString("withoutstep7"));
             else if(listPosition == 8)
-                instructionalLabel.setText(soiiapplication.SOIIApplication.BUNDLE.getString("step8"));
+                instructionalLabel.setText(soiiapplication.SOIIApplication.BUNDLE.getString("withoutstep8"));
             else if(listPosition == 9)
-                instructionalLabel.setText(soiiapplication.SOIIApplication.BUNDLE.getString("step9"));
+                instructionalLabel.setText(soiiapplication.SOIIApplication.BUNDLE.getString("withoutstep9"));
             
+        }
+        else {
+            title.setText(soiiapplication.SOIIApplication.BUNDLE.getString("randomsimulationMenuTitle"));
+            instructionalLabel.setText(soiiapplication.SOIIApplication.BUNDLE.getString("randomstep"));
         }
     }
     
