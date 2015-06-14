@@ -1,0 +1,48 @@
+*** Resumo de conceitos ***
+
+1) Condições de Corrida
+
+Quando dois ou mais processos distintos estão utilizando algum recurso compartilhado e a ordem em que essa utilização é feita interefere
+no resultado final, temos uma condição de corrida. Esse nome é dado porque o resultado depende de quem executa primeiro.
+Exemplo: Assim como ilustrado na simulação sem exclusão mútua deste recurso educacional aberto, há uma condição de corrida quando dois processos
+acessam uma região de memória compartilhada e não há um mecanismo que determina quando e como esses processos podem realizar operações
+na memória. Se um processo ler e escrever na memória ao mesmo tempo que o outro, o resultado final pode ser diferente do esperado!
+
+2) Exclusão Mútua
+
+Para resolver o problema do não-determinismo decorrente das condições de corrida, criou-se o conceito de exclusão mútua.
+Quando há um mecanismo exclusão mútua, somente um processo tem acesso à memória compartilhada (ou outro recurso compartilhado) por vez.
+O estudo na disciplina de Sistemas Operacionais foca no entendimento e escolha das primitivas adequadas para garantir uma exclusão mútua.
+Uma abstração pode ser criada para interpretar o problema de evitar condições de corrida: o conceito de Região Crítica.
+
+3) Região Crítica
+
+Região Crítica é a seção de um programa em que há acesso a algum recurso compartilhado (memória, por exemplo). Para evitar condições de corrida,
+é preciso garantir que processos distintos não estejam em suas regiões críticas ao mesmo tempo. Entretanto, para garantir um funcionamento correto e eficiente de processo concorrentes,
+algumas condições são necessárias ao implementar um mecanismo de exclusão mútua.
+
+4) Condições necessárias para uma boa solução de exclusão mútua
+
+As quatro condições são:
+    1) Dois processos nunca podem estar simultaneamente em suas regiões críticas
+    2) Nada pode ser afirmado sobre número e velocidade de CPUs
+    3) Nenhum processo estando fora de sua região crítica pode bloquear outros processos.
+    4) Nenhum processo deve esperar eternamente para entrar em sua região crítica.
+
+5) Implementação de mecanismos para exclusão mútua
+
+As primitivas que garantem o funcionamento de uma solução de exclusão mútua são chamadas de trava (lock, em inglês), já que remetem ao fato de um processo tomar o recurso que utilizará só para si.
+Alguns exemplos de primitivas (nem todas respeitando as 4 condições acima) são:
+    a) Espera ociosa
+    b) Desabilitar Interrupções
+    c) Variáveis de trava
+    d) Chavemento Obrigatório
+    e) Solução de Peterson
+    f) Instrução TSL
+    g) Sleep e Wakeup
+    h) Semáforos
+    i) Mutex
+    j) Monitores
+
+BIBLIOGRAFIA:
+Tanenbaum, Andrew S. (2008). Modern operating systems. Upper Saddle River, NJ: Pearson Prentice Hall. ISBN 0-13-600663-9.

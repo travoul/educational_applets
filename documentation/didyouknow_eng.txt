@@ -1,0 +1,48 @@
+*** Summary of Concepts ***
+
+1) Race conditions
+
+When two or more different processes are using some shared resource and the order in which they use the resource interferes in the final
+result, we have a race condition. This name is given because the result dependes in which process executes first.
+Example: as illustrated in the simulation without mutual exclusion (in this open educational resource), there is a race condition when
+two processes access a shared memory location and there is no mechanism to determine when and how these processes can operate on the memory location.
+If a process reads and writes from/to memory while another process is doing the same, the final result can be different than the expected!
+
+2) Mutual Exclusion
+
+To solve the problem of having non-deterministic results due to race conditions, the concept of mutual exclusion was created. When there is a mutual
+exclusion mechanism, only one process has access to shared memory (or another shared resource) at a given time.
+The study in the Operating Systems course focuses on the understanding and choice of the adequate primitives to guarantee mutual exclusion.
+An abstraction can be created to interpret the problem of avoiding race conditions: the concept of Critical Region.
+
+3) Critical Region
+
+Critical Region is the part of a program in which shared resources are accessed (for example, shared memory access). To avoid race conditions,
+different processes mut be guaranteed not to be at their critical regions at the same time. However, to guarantee a correct and efficient behavior of
+concurrent processes, some conditions must be satisfied when implementing a mutual exclusion mechanism.
+
+4) Necessary Conditions for a Good Mutual Exclusion Solution
+
+The four conditions are:
+    1) Two processes can never be simultaneously at their critical regions
+    2) Nothing can be said about the number and the speed of CPUs
+    3) Processes outside of their critical regions cannot block other processes
+    4) No process must wait forever to enter its critical region
+
+5) Implementation of Mutual Exclusion Mechanisms
+
+Primitives that guarantee the correct behavior of a mutua exclusion solution are called locks, due to the fact that the process using a resource will not share it, hence "locking" it.
+Some examples of primitives (not all of them satisfy all 4 conditions above) are:
+    a) Busy Waiting
+    b) Disabling Interruptions
+    c) Lock Variables
+    d) Mandatory COntext Switching
+    e) Petersons's Solution
+    f) TSL Instruction
+    g) Sleep and Wakeup
+    h) Semaphores
+    i) Mutexes
+    j) Monitors
+
+BIBLIOGRAPHY:
+Tanenbaum, Andrew S. (2008). Modern operating systems. Upper Saddle River, NJ: Pearson Prentice Hall. ISBN 0-13-600663-9.
