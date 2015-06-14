@@ -16,12 +16,12 @@ import javafx.stage.Stage;
 public class SOIIApplication extends Application {
     
     public static ResourceBundle BUNDLE;
-    private Stage primaryStage;
+    public static Stage primaryStage;
     
     @Override
     public void start(Stage stage) throws Exception {
         this.primaryStage = stage;
-        this.primaryStage.setTitle("Critical Mutex");
+        this.primaryStage.setTitle("Critical Region and Mutual Exclusion Open Educational Resource");
         this.primaryStage.setOnCloseRequest(e->{
             e.consume();
             closeProgram();

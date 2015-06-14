@@ -43,14 +43,15 @@ public class LanguageMenuController implements Initializable {
     @FXML
     private void mouseClickedBra(MouseEvent event) throws Exception {
         soiiapplication.SOIIApplication.BUNDLE = bundlePT;
-        
+        soiiapplication.SOIIApplication.primaryStage.setTitle("Recurso Educacional Aberto - Região Crítica e Exclusão Mútua");
         mouseClicked(event);
     } 
     
     @FXML
     private void mouseClickedUSA(MouseEvent event) throws Exception {
        soiiapplication.SOIIApplication.BUNDLE = bundleEN;
-        mouseClicked(event);
+       soiiapplication.SOIIApplication.primaryStage.setTitle("Critical Region and Mutual Exclusion Open Educational Resource");
+       mouseClicked(event);
     }
 
     private void mouseClicked(MouseEvent event) throws Exception {
@@ -65,6 +66,7 @@ public class LanguageMenuController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb){
+        
         languagePort.setText("Português");
         languageEng.setText("English");
     }
