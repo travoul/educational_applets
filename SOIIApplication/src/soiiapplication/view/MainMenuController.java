@@ -17,7 +17,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
-import soiiapplication.model.SimulatOS;
 
 /**
  * FXML Controller class
@@ -38,7 +37,7 @@ public class MainMenuController implements Initializable {
         Stage currentStage = (Stage) currentScene.getWindow();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("LanguageMenu.fxml"));
         Parent root = (Parent) loader.load();
-        Scene scene = new Scene(root);
+        Scene scene = new Scene(root,currentStage.getScene().getWidth(),currentStage.getScene().getHeight());
         currentStage.setScene(scene);
     }
 
@@ -48,7 +47,7 @@ public class MainMenuController implements Initializable {
         Stage currentStage = (Stage) currentScene.getWindow();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("Didyouknow.fxml"),soiiapplication.SOIIApplication.BUNDLE);
         Parent root = (Parent) loader.load();
-        Scene scene = new Scene(root);
+        Scene scene = new Scene(root,currentStage.getScene().getWidth(),currentStage.getScene().getHeight());
         currentStage.setScene(scene);
     }
     
@@ -58,7 +57,7 @@ public class MainMenuController implements Initializable {
         Stage currentStage = (Stage) currentScene.getWindow();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("ChooseSimulationMenu.fxml"),soiiapplication.SOIIApplication.BUNDLE);
         Parent root = (Parent) loader.load();
-        Scene scene = new Scene(root);
+        Scene scene = new Scene(root,currentStage.getScene().getWidth(),currentStage.getScene().getHeight());
         currentStage.setScene(scene);
     }
 
@@ -68,7 +67,7 @@ public class MainMenuController implements Initializable {
         Stage currentStage = (Stage) currentScene.getWindow();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("Credits.fxml"),soiiapplication.SOIIApplication.BUNDLE);
         Parent root = (Parent) loader.load();
-        Scene scene = new Scene(root);
+        Scene scene = new Scene(root,currentStage.getScene().getWidth(),currentStage.getScene().getHeight());
         currentStage.setScene(scene);
     }
 

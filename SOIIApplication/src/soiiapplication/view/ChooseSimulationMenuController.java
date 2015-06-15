@@ -43,7 +43,7 @@ public class ChooseSimulationMenuController implements Initializable {
             Stage currentStage = (Stage) currentScene.getWindow();
             FXMLLoader loader = new FXMLLoader(getClass().getResource("MainMenu.fxml"),soiiapplication.SOIIApplication.BUNDLE);
             Parent root = (Parent) loader.load();
-            Scene scene = new Scene(root);
+            Scene scene = new Scene(root,currentStage.getScene().getWidth(),currentStage.getScene().getHeight());
             currentStage.setScene(scene);
     }
 
@@ -54,7 +54,7 @@ public class ChooseSimulationMenuController implements Initializable {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("Simulation.fxml"),soiiapplication.SOIIApplication.BUNDLE);
         Parent root = (Parent) loader.load();
         ((SimulationController) loader.getController()).setupSimulationMode(1);
-        Scene scene = new Scene(root);
+        Scene scene = new Scene(root,currentStage.getScene().getWidth(),currentStage.getScene().getHeight());
         currentStage.setScene(scene);
     }
 
@@ -65,7 +65,7 @@ public class ChooseSimulationMenuController implements Initializable {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("Simulation.fxml"),soiiapplication.SOIIApplication.BUNDLE);
         Parent root = (Parent) loader.load();
         ((SimulationController) loader.getController()).setupSimulationMode(2);
-        Scene scene = new Scene(root);
+        Scene scene = new Scene(root,currentStage.getScene().getWidth(),currentStage.getScene().getHeight());
         currentStage.setScene(scene);
     }
 
@@ -76,7 +76,7 @@ public class ChooseSimulationMenuController implements Initializable {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("Simulation.fxml"),soiiapplication.SOIIApplication.BUNDLE);
             Parent root = (Parent) loader.load();
             ((SimulationController) loader.getController()).setupSimulationMode(3);
-            Scene scene = new Scene(root);
+            Scene scene = new Scene(root,currentStage.getScene().getWidth(),currentStage.getScene().getHeight());
             currentStage.setScene(scene);
     }
     

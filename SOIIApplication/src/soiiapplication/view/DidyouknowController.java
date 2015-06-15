@@ -39,7 +39,7 @@ public class DidyouknowController implements Initializable {
         Stage currentStage = (Stage) currentScene.getWindow();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("MainMenu.fxml"),soiiapplication.SOIIApplication.BUNDLE);
         Parent root = (Parent) loader.load();
-        Scene scene = new Scene(root);
+        Scene scene = new Scene(root,currentStage.getScene().getWidth(),currentStage.getScene().getHeight());
         currentStage.setScene(scene);
     }
 }
