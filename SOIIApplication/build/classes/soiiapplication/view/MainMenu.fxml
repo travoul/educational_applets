@@ -35,12 +35,12 @@
             <Region layoutX="803.0" layoutY="3.0" maxHeight="-Infinity" minHeight="-Infinity" nodeOrientation="RIGHT_TO_LEFT" prefHeight="100.0" AnchorPane.rightAnchor="0.0" HBox.hgrow="ALWAYS" />
          </children>
       </HBox>
-      <VBox alignment="CENTER" layoutX="47.0" layoutY="211.0" spacing="20.0" AnchorPane.leftAnchor="80.0">
+      <VBox alignment="CENTER" layoutX="47.0" layoutY="211.0" spacing="20.0" AnchorPane.leftAnchor="500.0" AnchorPane.rightAnchor="500.0">
          <children>
-            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#firstButtonMouseClicked" onMouseEntered="#firstButtonMouseEntered" onMouseExited="#allButtonsMouseExited" prefHeight="30.0" prefWidth="120.0" text="%readableContent" VBox.vgrow="NEVER" />
-            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#secondButtonMouseClicked" onMouseEntered="#secondButtonMouseEntered" onMouseExited="#allButtonsMouseExited" prefHeight="30.0" prefWidth="120.0" text="%simulation" VBox.vgrow="NEVER" />
-            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#thirdButtonMouseClicked" onMouseEntered="#thirdButtonMouseEntered" onMouseExited="#allButtonsMouseExited" prefHeight="30.0" prefWidth="120.0" text="%credits" VBox.vgrow="NEVER" />
-            <Button fx:id="language" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#mouseClickedLanguage" onMouseEntered="#fourthButtonMouseEntered" onMouseExited="#allButtonsMouseExited" prefHeight="30.0" prefWidth="120.0" text="%changeLanguage" VBox.vgrow="NEVER" />
+            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#firstButtonMouseClicked" onMouseEntered="#firstButtonMouseEntered" onMouseExited="#allButtonsMouseExited" prefHeight="30.0" prefWidth="200.0" text="%readableContent" VBox.vgrow="NEVER" />
+            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#secondButtonMouseClicked" onMouseEntered="#secondButtonMouseEntered" onMouseExited="#allButtonsMouseExited" prefHeight="30.0" prefWidth="200.0" text="%simulation" VBox.vgrow="NEVER" />
+            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#thirdButtonMouseClicked" onMouseEntered="#thirdButtonMouseEntered" onMouseExited="#allButtonsMouseExited" prefHeight="30.0" prefWidth="200.0" text="%credits" VBox.vgrow="NEVER" />
+            <Button fx:id="language" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#mouseClickedLanguage" onMouseEntered="#fourthButtonMouseEntered" onMouseExited="#allButtonsMouseExited" prefHeight="30.0" prefWidth="200.0" text="%changeLanguage" VBox.vgrow="NEVER" />
          </children>
       </VBox>
       <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">

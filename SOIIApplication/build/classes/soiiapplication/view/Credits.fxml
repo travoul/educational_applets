@@ -39,6 +39,6 @@
             <Region layoutX="110.0" layoutY="10.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="100.0" HBox.hgrow="ALWAYS" />
          </children>
       </HBox>
-      <TextArea editable="false" layoutX="55.0" layoutY="237.0" maxHeight="-Infinity" minHeight="-Infinity" text="Autores:&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;Github Profile&#10;Marcello de Paula Ferreira Costa&#9;&#9;&#9;&#9;&#9;@travoul&#10;Henrique de Almeira Machado da Silveira&#9;&#9;&#9;@henrisilver&#10;Guilherme Nishina Fortes&#9;&#9;&#9;&#9;&#9;&#9;@definir&#10;Sérgio Yudi Takeda&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;@definir&#10;&#10;&#10;Segundo trabalho especificado na displina de Sistemas Operacionais SSC-0640&#10;Disciplina oferecida pela Universidade de São Paulo - Campus de São Carlos&#10;Professor responsável: Paulo Sérgio Lopes Souza Algo Assim Definir" AnchorPane.bottomAnchor="120.0" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="180.0" />
+      <TextArea editable="false" layoutX="55.0" layoutY="237.0" maxHeight="-Infinity" minHeight="-Infinity" text="%creditsContent" AnchorPane.bottomAnchor="120.0" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="180.0" />
    </children>
 </AnchorPane>
