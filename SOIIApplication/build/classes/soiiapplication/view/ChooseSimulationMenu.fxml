@@ -21,7 +21,7 @@
                   <Button maxHeight="-Infinity" minHeight="-Infinity" mnemonicParsing="false" onMouseClicked="#mutualClicked" onMouseEntered="#mutualEntered" onMouseExited="#noneSelected" prefHeight="40.0" text="%mutualExclusion" />
                   <Button maxHeight="-Infinity" minHeight="-Infinity" mnemonicParsing="false" onMouseClicked="#noMutualClicked" onMouseEntered="#noMutualEntered" onMouseExited="#noneSelected" prefHeight="40.0" text="%noMutualExclusion" />
                   <Button maxHeight="-Infinity" minHeight="-Infinity" mnemonicParsing="false" onMouseClicked="#randomClicked" onMouseEntered="#randomEntered" onMouseExited="#noneSelected" prefHeight="40.0" text="%random" />
-                  <Label fx:id="aboutSimulation" alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" prefWidth="600.0" />
+                  <Label fx:id="aboutSimulation" alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" prefWidth="700.0" />
                </children>
             </VBox>
          </center>
