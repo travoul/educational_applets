@@ -14,6 +14,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
@@ -23,7 +24,11 @@ import javafx.stage.Stage;
  * @author Marcello
  */
 public class ChooseSimulationMenuController implements Initializable {
-
+    
+    
+    @FXML
+    private Label aboutSimulation;
+    
     /**
      * Initializes the controller class.
      */
@@ -73,5 +78,30 @@ public class ChooseSimulationMenuController implements Initializable {
             ((SimulationController) loader.getController()).setupSimulationMode(3);
             Scene scene = new Scene(root);
             currentStage.setScene(scene);
+    }
+    
+    @FXML
+    private void mutualEntered (MouseEvent e) throws Exception {
+        aboutSimulation.setText(soiiapplication.SOIIApplication.BUNDLE.getString("onMutualExclusion"));
+    }
+    
+    @FXML
+    private void noMutualEntered (MouseEvent e) throws Exception {
+        aboutSimulation.setText(soiiapplication.SOIIApplication.BUNDLE.getString("onNoMutualExclusion"));
+    }
+    
+    @FXML
+    private void randomEntered (MouseEvent e) throws Exception {
+        aboutSimulation.setText(soiiapplication.SOIIApplication.BUNDLE.getString("onRandom"));
+    }
+    
+    @FXML
+    private void backButtonEntered (MouseEvent e) throws Exception {
+        aboutSimulation.setText(soiiapplication.SOIIApplication.BUNDLE.getString("backButtonChooseSimulationMenu"));
+    }
+    
+    @FXML
+    private void noneSelected(MouseEvent e) throws Exception {
+        aboutSimulation.setText(soiiapplication.SOIIApplication.BUNDLE.getString("selectAnOption"));
     }
 }

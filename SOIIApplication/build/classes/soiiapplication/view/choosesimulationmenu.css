@@ -5,3 +5,7 @@
 .mainFxmlClass {
     -fx-background-image: url("pictures/background.png");
 }
+
+#aboutSimulation{
+    -fx-background-color: white;
+}
