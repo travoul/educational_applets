@@ -34,7 +34,7 @@ public class ChooseSimulationMenuController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-
+        aboutSimulation.setText(soiiapplication.SOIIApplication.BUNDLE.getString("selectAnOption"));
     }
     
     @FXML
