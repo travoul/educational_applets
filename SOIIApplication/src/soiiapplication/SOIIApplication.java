@@ -26,11 +26,12 @@ public class SOIIApplication extends Application {
             e.consume();
             closeProgram();
         });
-        this.primaryStage.setMinHeight(600);
+        this.primaryStage.setMinHeight(650);
         this.primaryStage.setMinWidth(1000);
         
         AnchorPane root = FXMLLoader.load(getClass().getResource("view/LanguageMenu.fxml"));
         root.setId("AnchorPane");
+        
         
         Scene scene = new Scene(root);
         stage.setScene(scene);
