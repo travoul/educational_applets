@@ -55,26 +55,21 @@
             <Region maxHeight="-Infinity" minHeight="-Infinity" prefHeight="280.0" HBox.hgrow="ALWAYS" />
          </children>
       </HBox>
-      <HBox alignment="CENTER" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" AnchorPane.bottomAnchor="120.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+      <HBox alignment="CENTER" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="150.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <children>
-            <Region maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" HBox.hgrow="ALWAYS" />
-            <Label fx:id="currentProcess" alignment="CENTER" contentDisplay="CENTER" layoutX="584.0" layoutY="27.0" prefHeight="16.0" prefWidth="280.0" text="%executing" wrapText="true" />
-            <Region maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" HBox.hgrow="ALWAYS" />
-            <Label fx:id="criticalBlock" alignment="CENTER" contentDisplay="CENTER" prefHeight="16.0" prefWidth="280.0" text="%blocking" wrapText="true" />
-            <Region maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" HBox.hgrow="ALWAYS" />
-         </children>
-      </HBox>
-      <HBox alignment="CENTER" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" AnchorPane.bottomAnchor="80.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
-         <children>
-            <Region layoutX="336.0" layoutY="10.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" HBox.hgrow="ALWAYS" />
-            <Label fx:id="criticalRegion" alignment="CENTER" contentDisplay="CENTER" prefHeight="16.0" prefWidth="326.0" text="%criticalRegion" wrapText="true" />
-            <Region maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" HBox.hgrow="ALWAYS" />
-         </children>
-      </HBox>
-      <HBox alignment="CENTER" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="80.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
-         <children>
-            <Region maxHeight="-Infinity" minHeight="-Infinity" prefHeight="100.0" />
-            <VBox alignment="CENTER" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="60.0">
+            <Region maxHeight="-Infinity" minHeight="-Infinity" prefHeight="100.0" HBox.hgrow="ALWAYS" />
+            <VBox alignment="CENTER" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="150.0" spacing="15.0">
+               <HBox.margin>
+                  <Insets bottom="20.0" top="20.0" />
+               </HBox.margin>
+               <children>
+                  <Label fx:id="criticalBlock" alignment="CENTER" contentDisplay="CENTER" prefHeight="16.0" prefWidth="280.0" text="%blocking" wrapText="true" />
+                  <Label fx:id="currentProcess" alignment="CENTER" contentDisplay="CENTER" prefHeight="16.0" prefWidth="280.0" text="%executing" wrapText="true" />
+                  <Label fx:id="criticalRegion" alignment="CENTER" contentDisplay="CENTER" prefHeight="16.0" prefWidth="280.0" text="%criticalRegion" wrapText="true" />
+               </children>
+            </VBox>
+            <Region maxHeight="-Infinity" minHeight="-Infinity" prefHeight="100.0" HBox.hgrow="ALWAYS" />
+            <VBox alignment="CENTER" layoutX="400.0" layoutY="20.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="60.0">
                <children>
                   <HBox prefHeight="100.0" prefWidth="220.0" spacing="20.0">
                      <children>
@@ -84,11 +79,31 @@
                   </HBox>
                   <Button fx:id="backButton" alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#backButtonClicked" prefHeight="25.0" prefWidth="150.0" text="%back" />
                </children>
-               <HBox.margin>
-                  <Insets bottom="20.0" top="20.0" />
-               </HBox.margin>
             </VBox>
-            <Region maxHeight="-Infinity" minHeight="-Infinity" prefHeight="100.0" />
+            <Region layoutX="400.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="100.0" HBox.hgrow="ALWAYS" />
+            <VBox alignment="CENTER" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="150.0" spacing="15.0">
+               <children>
+                  <StackPane>
+                     <children>
+                        <Label fx:id="colorLabel1" alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="300.0" />
+                        <Label fx:id="textColorLabel1" alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="16.0" prefWidth="280.0" text="%colorLabel1String" />
+                     </children>
+                  </StackPane>
+                  <StackPane>
+                     <children>
+                        <Label fx:id="colorLabel2" alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="300.0" />
+                        <Label fx:id="textColorLabel2" alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="16.0" prefWidth="280.0" text="%colorLabel2String" />
+                     </children>
+                  </StackPane>
+                  <StackPane>
+                     <children>
+                        <Label fx:id="colorLabel3" alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="300.0" />
+                        <Label fx:id="textColorLabel3" alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="16.0" prefWidth="280.0" text="%colorLabel3String" />
+                     </children>
+                  </StackPane>
+               </children>
+            </VBox>
+            <Region layoutX="764.0" layoutY="35.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="100.0" HBox.hgrow="ALWAYS" />
          </children>
       </HBox>
    </children>

@@ -25,3 +25,33 @@
     -fx-background-color:white;
     -fx-effect: dropshadow( one-pass-box , black , 8 , 0.0 , 1.5 , 0 );
 }
+
+#colorLabel1 {
+    -fx-effect: dropshadow( one-pass-box , black , 8 , 0.0 , 1.5 , 0 );
+    -fx-background-color: green;
+
+}
+#colorLabel2 {
+    -fx-effect: dropshadow( one-pass-box , black , 8 , 0.0 , 1.5 , 0 );
+    -fx-background-color: yellow;
+}
+
+#colorLabel3 {
+    -fx-effect: dropshadow( one-pass-box , black , 8 , 0.0 , 1.5 , 0 );
+    -fx-background-color: red;
+}
+
+#textColorLabel1 {
+    -fx-background-color:white;
+    -fx-effect: dropshadow( one-pass-box , black , 8 , 0.0 , 1.5 , 0 );
+}
+
+#textColorLabel2 {
+    -fx-background-color:white;
+    -fx-effect: dropshadow( one-pass-box , black , 8 , 0.0 , 1.5 , 0 );
+}
+
+#textColorLabel3 {
+    -fx-background-color:white;
+    -fx-effect: dropshadow( one-pass-box , black , 8 , 0.0 , 1.5 , 0 );
+}

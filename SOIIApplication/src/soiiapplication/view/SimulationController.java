@@ -103,6 +103,24 @@ public class SimulationController implements Initializable {
     private Label instructionalLabel;
     
     @FXML
+    private Label colorLabel1;
+        
+    @FXML
+    private Label colorLabel2;
+        
+    @FXML
+    private Label colorLabel3;
+    
+    @FXML
+    private Label textColorLabel1;
+        
+    @FXML
+    private Label textColorLabel2;
+        
+    @FXML
+    private Label textColorLabel3;
+    
+    @FXML
     private Label title;
     
     @FXML
