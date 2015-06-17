@@ -28,7 +28,7 @@
             <Region maxHeight="-Infinity" minHeight="-Infinity" prefHeight="100.0" HBox.hgrow="ALWAYS" />
          </children>
       </HBox>
-      <TextArea editable="false" layoutX="45.0" layoutY="227.0" maxHeight="-Infinity" minHeight="-Infinity" text="%didYouKnowContent" AnchorPane.bottomAnchor="120.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="180.0" />
+      <TextArea editable="false" layoutX="45.0" layoutY="227.0" maxHeight="-Infinity" minHeight="-Infinity" text="%didYouKnowContent" AnchorPane.bottomAnchor="120.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="110.0" />
       <HBox alignment="CENTER" layoutX="400.0" layoutY="483.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <children>
             <Region maxHeight="-Infinity" minHeight="-Infinity" prefHeight="100.0" HBox.hgrow="ALWAYS" />

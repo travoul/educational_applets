@@ -1,21 +1,22 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/* SSC0640 - Operating Systems 1
+ * Institute of Mathematical and Computer Sciences
+ * University of Sao Paulo
+ * Project 2 - Mutual Exclusion and Critical Region Applet
+ * 17/06/2015
+ ***************************************************************
+ * Authors
+ * Guilherme Nishina Fortes 			- No. USP 7245552
+ * Henrique de Almeida Machado da Silveira 	- No. USP 7961089
+ * Marcello de Paula Ferreira Costa 		- No. USP 7960690
+ * Sergio Yudi Takeda 				- No. USP 7572996
+ ***************************************************************
+ * GROUP 13
  */
 package soiiapplication.model;
 
 import java.util.Random;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-/**
- *
- * @author henrisilver
- */
+// Class that represents our simulator and that schedules processes
 public class SimulatOS {
     private ProcessModel first;
     private ProcessModel second;
@@ -39,7 +40,6 @@ public class SimulatOS {
     }
     
     public CurrentState simulate() {
-        //while(first.getLoop() < maxLoops || second.getLoop() < maxLoops) {
             if(simulationMode == 1)
             {
                 scheduleCrit();
@@ -56,8 +56,6 @@ public class SimulatOS {
                 scheduleRandom();
             
             criticalBlock = current.nextLine(other);
-            //System.out.println("Active Process: " + current.hashCode() + " in line: " + current.getCurrentLine());
-            //System.out.println("Other Process: " + other.hashCode() + " in line: " + other.getCurrentLine());
             return new CurrentState(currentProcessID,  first.getCurrentLine(), second.getCurrentLine(), first.isInCritical(), second.isInCritical(), criticalBlock);
     }
     

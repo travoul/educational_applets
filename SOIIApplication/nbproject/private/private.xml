@@ -4,19 +4,9 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/Users/henrisilver/NetBeansProjects/SOIIApplication/src/soiiapplication/bundle_en.properties</file>
-            <file>file:/Users/henrisilver/NetBeansProjects/SOIIApplication/src/soiiapplication/model/SimulatOS.java</file>
-            <file>file:/Users/henrisilver/NetBeansProjects/SOIIApplication/src/soiiapplication/view/LanguageMenu.fxml</file>
-            <file>file:/Users/henrisilver/NetBeansProjects/SOIIApplication/src/soiiapplication/view/DidyouknowController.java</file>
             <file>file:/Users/henrisilver/NetBeansProjects/SOIIApplication/src/soiiapplication/view/SimulationController.java</file>
-            <file>file:/Users/henrisilver/NetBeansProjects/SOIIApplication/src/soiiapplication/view/MainMenuController.java</file>
-            <file>file:/Users/henrisilver/NetBeansProjects/SOIIApplication/src/soiiapplication/view/ChooseSimulationMenuController.java</file>
             <file>file:/Users/henrisilver/NetBeansProjects/SOIIApplication/src/soiiapplication/SOIIApplication.java</file>
-            <file>file:/Users/henrisilver/NetBeansProjects/SOIIApplication/src/soiiapplication/model/ProcessModel.java</file>
-            <file>file:/Users/henrisilver/NetBeansProjects/SOIIApplication/src/soiiapplication/model/CurrentState.java</file>
-            <file>file:/Users/henrisilver/NetBeansProjects/SOIIApplication/src/soiiapplication/view/LanguageMenuController.java</file>
-            <file>file:/Users/henrisilver/NetBeansProjects/SOIIApplication/src/soiiapplication/model/Instruction.java</file>
             <file>file:/Users/henrisilver/NetBeansProjects/SOIIApplication/src/soiiapplication/bundle_pt.properties</file>
-            <file>file:/Users/henrisilver/NetBeansProjects/SOIIApplication/src/soiiapplication/view/MainMenu.fxml</file>
         </group>
     </open-files>
 </project-private>

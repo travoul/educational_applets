@@ -1,31 +1,18 @@
-// 	BEM VINDOS DE VOLTA
-// 	SENTI SUA FALTA
-//     VOCÊS SÃO OS CARAS
-// 	ESTAVA ESPERANDO VOCÊS! :D
-//   #define NOTA 10 // De novo ;)
-//       #cortesia bjm 20/4/2015
-//       kkkk
-//       #cortesia v2.0 bjm 28/05/2015 YEAH
-//       Shina mandou beijo. Raul
-// TODO:
-/*
- ----- CRIAR BOTÃO DE AJUDA E SEÇÃO DE AJUDA NO SIMULADOR PARA INSTRUCÕES
- ----- EDITAR O DID YOU KNOW
- ----- INTERNACIONALIZAR CÓDIGO DA REGIÃO CRíTICA
- ----- BOTÃO "PRÓXIMO PASSO" ESTA "PRÓXIMO PA..." E OUTROS BOTÕES TAMBÉM
+/* SSC0640 - Operating Systems 1
+ * Institute of Mathematical and Computer Sciences
+ * University of Sao Paulo
+ * Project 2 - Mutual Exclusion and Critical Region Applet
+ * 17/06/2015
+ ***************************************************************
+ * Authors
+ * Guilherme Nishina Fortes 			- No. USP 7245552
+ * Henrique de Almeida Machado da Silveira 	- No. USP 7961089
+ * Marcello de Paula Ferreira Costa 		- No. USP 7960690
+ * Sergio Yudi Takeda 				- No. USP 7572996
+ ***************************************************************
+ * GROUP 13
  */
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package soiiapplication.view;
 
 import java.net.URL;
@@ -54,7 +41,7 @@ import soiiapplication.model.CurrentState;
 /**
  * FXML Controller class
  *
- * @author henrisilver
+ * Simulation Controller
  */
 public class SimulationController implements Initializable {
     
@@ -194,7 +181,7 @@ public class SimulationController implements Initializable {
     }
     
     private void addInstructionsMutualExclusion(ObservableList<Instruction> instructions) {
-        instructions.add(new Instruction("1", "void thread() {"));
+        instructions.add(new Instruction("1", "void function() {"));
         instructions.add(new Instruction("2", "\tint local_variable;"));
         instructions.add(new Instruction("3", "\tlock_critical_region();"));
         instructions.add(new Instruction("4", "\tlocal_variable = read_from_memory(0xF4D9012C);"));
@@ -206,7 +193,7 @@ public class SimulationController implements Initializable {
     }
     
     private void addInstructionsNoMutualExclusion(ObservableList<Instruction> instructions) {
-        instructions.add(new Instruction("1", "void thread() {"));
+        instructions.add(new Instruction("1", "void function() {"));
         instructions.add(new Instruction("2", "\tint local_variable;"));
         instructions.add(new Instruction("3", "\tlocal_variable = read_from_memory(0xF4D9012C);"));
         instructions.add(new Instruction("4", "\tlocal_variable++;"));
@@ -263,8 +250,6 @@ public class SimulationController implements Initializable {
                 nextButton.setOpacity(0.5);
             }
         }
-        //System.out.println("Mode:"+simulationMode);
-        //System.out.println("NEXT " + currentState.hashCode());
         displayState(currentState);
     }
     
@@ -282,7 +267,6 @@ public class SimulationController implements Initializable {
         nextButton.setDisable(false);
         nextButton.setOpacity(1.0);
         
-        //System.out.println("PREVIOUS " + currentState.hashCode());
         displayState(currentState);
     }
     
@@ -454,7 +438,6 @@ public class SimulationController implements Initializable {
                             setText(item);
                         }
                         
-                        // Style all dates in March with a different color.
                         if (item.contains(currentTag) && currentTag.equals("GREEN")) {
                             setTextFill(Color.WHITE);
                             setStyle("-fx-background-color: green");

@@ -1,18 +1,23 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/* SSC0640 - Operating Systems 1
+ * Institute of Mathematical and Computer Sciences
+ * University of Sao Paulo
+ * Project 2 - Mutual Exclusion and Critical Region Applet
+ * 17/06/2015
+ ***************************************************************
+ * Authors
+ * Guilherme Nishina Fortes 			- No. USP 7245552
+ * Henrique de Almeida Machado da Silveira 	- No. USP 7961089
+ * Marcello de Paula Ferreira Costa 		- No. USP 7960690
+ * Sergio Yudi Takeda 				- No. USP 7572996
+ ***************************************************************
+ * GROUP 13
  */
 package soiiapplication.model;
 
-import java.util.ArrayList;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
-/**
- *
- * @author henrisilver
- */
+// Class that represent the model of a instruction
 public class Instruction {
     private final StringProperty number;
     private final StringProperty instr;
