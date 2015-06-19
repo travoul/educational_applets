@@ -24,4 +24,5 @@ Analogias:
 4. Um motorista precisa dormir/descansar alguma hora.
 
 JavaScript vs Java Applet
+utzid
 
