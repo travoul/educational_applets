@@ -1,5 +1,6 @@
 /* SSC0640 - Operating Systems 1
  * Institute of Mathematical and Computer Sciences
+ * School of Engineering of São Carlos
  * University of Sao Paulo
  * Project 2 - Mutual Exclusion and Critical Region Applet
  * 17/06/2015
@@ -203,7 +204,7 @@ public class SimulationController implements Initializable {
     }
     
     private void addInstructionsRandom(ObservableList<Instruction> instructions) {
-        instructions.add(new Instruction("1", "void thread(){"));
+        instructions.add(new Instruction("1", "void function(){"));
         instructions.add(new Instruction("2", "\ttype variables;"));
         instructions.add(new Instruction("3", "\twhile(TRUE) {"));
         instructions.add(new Instruction("4", "\t\tdoWhateverNonCritical();"));

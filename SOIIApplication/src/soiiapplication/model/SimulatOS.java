@@ -1,5 +1,6 @@
 /* SSC0640 - Operating Systems 1
  * Institute of Mathematical and Computer Sciences
+ * School of Engineering of São Carlos
  * University of Sao Paulo
  * Project 2 - Mutual Exclusion and Critical Region Applet
  * 17/06/2015
@@ -12,6 +13,7 @@
  ***************************************************************
  * GROUP 13
  */
+
 package soiiapplication.model;
 
 import java.util.Random;
