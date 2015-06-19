@@ -25,12 +25,12 @@
             <Region maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" HBox.hgrow="ALWAYS" />
          </children>
       </HBox>
-      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="460.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="40.0">
+      <HBox alignment="CENTER" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="110.0" AnchorPane.bottomAnchor="460.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="40.0">
          <children>
             <Region prefHeight="100.0" HBox.hgrow="ALWAYS" />
-            <Label fx:id="instructionalLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="100.0" prefWidth="800.0" textFill="#575656" HBox.hgrow="ALWAYS">
+            <Label fx:id="instructionalLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="110.0" prefWidth="840.0" textFill="#575656" HBox.hgrow="ALWAYS">
                <font>
-                  <Font name="System Bold" size="12.0" />
+                  <Font name="System Bold" size="13.0" />
                </font>
             </Label>
             <Region maxHeight="-Infinity" minHeight="-Infinity" prefHeight="100.0" HBox.hgrow="ALWAYS" />
