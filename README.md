@@ -2,10 +2,10 @@
 
 ##AUTHORS
 
-1. Guilherme Nishina Fortes
-2. Henrique de Almeida Machado da Silveira
-3. Marcello de Paula Ferreira Costa
-4. Sergio Yudi Takeda 
+1. **Guilherme Nishina Fortes**
+2. **Henrique de Almeida Machado da Silveira**
+3. **Marcello de Paula Ferreira Costa**
+4. **Sergio Yudi Takeda**
 
 ##Description of the Open Educational Resource: Mutual Exclusion and Critical Region
 
