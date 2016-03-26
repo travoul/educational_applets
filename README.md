@@ -10,10 +10,10 @@
 ##Description of the Open Educational Resource: Mutual Exclusion and Critical Region
 
 
-###University Of São Paulo
-###Institute of Mathematical and Computer Sciences
-###Class: SSC0640 Operating Systems I
-###Date: 06/17/2015
+**University Of São Paulo**
+**Institute of Mathematical and Computer Sciences**
+**Class: SSC0640 Operating Systems I**
+**Date: 06/17/2015**
 
 
 ####OBJECTIVES
