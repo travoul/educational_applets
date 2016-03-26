@@ -1,30 +1,22 @@
 # Open Educational Resource: Mutual Exclusion and Critical Region
 
-AUTHORS
-   Guilherme Nishina Fortes
+##AUTHORS
 
-   Henrique de Almeida Machado da Silveira
+1. Guilherme Nishina Fortes
+2. Henrique de Almeida Machado da Silveira
+3. Marcello de Paula Ferreira Costa
+4. Sergio Yudi Takeda 
 
-   Marcello de Paula Ferreira Costa
-
-   Sergio Yudi Takeda 
-
-
-Description of the Open Educational Resource:
-   
-   Mutual Exclusion and Critical Region
+##Description of the Open Educational Resource: Mutual Exclusion and Critical Region
 
 
-University Of São Paulo
-   
-   Institute of Mathematical and Computer Sciences
-   
-   Class: SSC0640 Operating Systems I
-   
-   Date: 06/17/2015
+###University Of São Paulo
+###Institute of Mathematical and Computer Sciences
+###Class: SSC0640 Operating Systems I
+###Date: 06/17/2015
 
 
-OBJECTIVES
+####OBJECTIVES
  
  This Mutual Exclusion and Critical Region aims to illustrate two important concepts related to operating systems: critical region and mutual exclusion.
  Its objectives are:
@@ -35,7 +27,7 @@ OBJECTIVES
 4. To illustrate a situation in which the lack of a mutual exclusion mechanism results in unexpected and unwanted behavior.
 
 
-UTILIZATION
+####UTILIZATION
    
    The utilization of this open educational resource can be done by:
 
@@ -44,12 +36,12 @@ UTILIZATION
 SNAPSHOT 
 
 
-SYSTEM REQUIREMENTS AND NECESSARY RESOURCES
+####SYSTEM REQUIREMENTS AND NECESSARY RESOURCES
 
 1. To use this open educational resource, there is no need for special hardware resources;
 2. In case the user downloads only the .jar file, it is necessary to have the latest version of Java installed in the computer. The latest version of Java was Java 8 when this text was written.
 
-INSTALLATION AND USAGE INSTRUCTIONS
+####INSTALLATION AND USAGE INSTRUCTIONS
 
    INSTALLATION: It is nor necessary to install the software. The provided .jar file can be executed by opening it. However, in some cases, the computer’s security settings might block the execution of the software. In this case, change the computer’s security settings to allow the execution of the Open Educational Resource.
 
